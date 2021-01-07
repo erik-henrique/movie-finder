@@ -1,4 +1,8 @@
-import { ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  DetachedRouteHandle,
+  RouteReuseStrategy,
+} from '@angular/router';
 import { Injectable } from '@angular/core';
 
 /**
@@ -12,7 +16,10 @@ export class RouteReusableStrategy extends RouteReuseStrategy {
     return false;
   }
 
-  public store(route: ActivatedRouteSnapshot, detachedTree: DetachedRouteHandle | null): void {}
+  public store(
+    route: ActivatedRouteSnapshot,
+    detachedTree: DetachedRouteHandle | null
+  ): void {}
 
   public shouldAttach(route: ActivatedRouteSnapshot): boolean {
     return false;
@@ -22,7 +29,10 @@ export class RouteReusableStrategy extends RouteReuseStrategy {
     return null;
   }
 
-  public shouldReuseRoute(future: ActivatedRouteSnapshot, curr: ActivatedRouteSnapshot): boolean {
+  public shouldReuseRoute(
+    future: ActivatedRouteSnapshot,
+    curr: ActivatedRouteSnapshot
+  ): boolean {
     return future.routeConfig === curr.routeConfig || future.data.reuse;
   }
 }

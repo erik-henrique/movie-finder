@@ -9,4 +9,4 @@ import { ShellComponent } from './shell.component';
   imports: [CommonModule, TranslateModule, RouterModule],
   declarations: [HeaderComponent, ShellComponent],
 })
-export class ShellModule { }
+export class ShellModule {}
