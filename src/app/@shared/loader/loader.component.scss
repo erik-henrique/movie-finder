@@ -1,3 +1,11 @@
-.fa {
-  vertical-align: middle;
+@import "theme-variables.scss";
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > .fa-spinner {
+    color: $white;
+  }
 }

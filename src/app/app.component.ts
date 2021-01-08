@@ -7,7 +7,6 @@ import { environment } from '@env/environment';
 import { TranslateService } from '@ngx-translate/core';
 import { merge } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
-import { MovieService } from './@shared/api/movie/movie.service';
 
 const log = new Logger('App');
 
@@ -22,14 +21,10 @@ export class AppComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private translateService: TranslateService,
-    private i18nService: I18nService,
-    private movieService: MovieService
+    private i18nService: I18nService
   ) {}
 
   ngOnInit() {
-    this.movieService.getMovies('avengers').subscribe((data) => {
-      console.log(data);
-    });
     // Setup logger
     if (environment.production) {
       Logger.enableProductionMode();

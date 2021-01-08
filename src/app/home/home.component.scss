@@ -1,9 +1,84 @@
-.logo {
-  width: 100px;
-}
+@import "theme-variables.scss";
 
-q {
-  font-style: italic;
-  font-size: 1.2rem;
-  quotes: "« " " »";
+.home-container {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  > .search-container {
+    box-sizing: border-box;
+    border-radius: 25px;
+    line-height: 1;
+    font-size: 1em;
+    background-color: $white;
+    height: 2.623rem;
+    margin-top: 1rem;
+    display: inline-flex;
+    width: 100%;
+    > .input-wrapper {
+      display: inline-block;
+      width: 100%;
+
+      position: relative;
+      > .search-input {
+        display: inline-block;
+        width: 90%;
+        min-height: 36px;
+        margin-left: 10px;
+        border: 0;
+        outline: none;
+        font-size: 0.9rem;
+        border-radius: 25px;
+        height: 100%;
+        padding: 0;
+      }
+
+      > .fa-search {
+        right: 1rem;
+        position: absolute;
+        margin-top: 0.8rem;
+        cursor: pointer;
+      }
+    }
+
+    > .chip {
+      margin: 5px;
+      height: 32px;
+      line-height: 32px;
+      display: inline-block;
+      background: $gray-200;
+      padding: 0 12px;
+      border-radius: 32px;
+      font-size: 13px;
+
+      white-space: nowrap;
+      &:hover {
+        background: $gray-300;
+      }
+
+      > .close-button {
+        border: none;
+        border-radius: 50%;
+        background-color: $gray-600;
+
+        border-radius: 50%;
+        line-height: 1.5rem;
+        margin-left: 0.5rem;
+        margin-top: 0.2rem;
+        height: 1.5rem;
+
+        display: inline-block;
+        &:hover {
+          cursor: pointer;
+          background-color: $gray-800;
+        }
+
+        > .close-icon {
+          color: $gray-100;
+        }
+      }
+    }
+  }
+
+  > .loader {
+    margin-top: 1rem;
+  }
 }

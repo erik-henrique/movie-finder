@@ -30,10 +30,11 @@
               "src/manifest.webmanifest",
               "src/assets"
             ],
-            "styles": [
-              "src/main.scss"
-            ],
-            "scripts": []
+            "styles": ["src/main.scss"],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["./src/theme"]
+            }
           },
           "configurations": {
             "production": {
@@ -115,9 +116,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {

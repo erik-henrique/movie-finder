@@ -14,3 +14,10 @@
 
 // Theme customization
 @import "theme/theme";
+
+html,
+body {
+  background-color: $gray-800;
+  margin: 0;
+  padding: 0;
+}

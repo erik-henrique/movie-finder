@@ -1,9 +1,31 @@
-<div>
-  <div>
-    <h1>
-      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
-      <span translate>Hello world !</span>
-    </h1>
+<div class="home-container">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="addMovieToFind()"
+    class="search-container"
+  >
+    <div class="chip" *ngFor="let chip of movieTermsArray">
+      <span>{{ chip }}</span>
+      <button
+        type="button"
+        (click)="deleteMovieToFind(chip)"
+        class="close-button"
+      >
+        <i class="fas fa-times close-icon"></i>
+      </button>
+    </div>
+    <div class="input-wrapper">
+      <input
+        formControlName="movieTerm"
+        type="text"
+        class="search-input"
+        id="search-input"
+        (keyup.enter)="addMovieToFind()"
+      />
+      <i (click)="findMovies()" class="fas fa-search"></i>
+    </div>
+  </form>
+  <div class="loader">
     <app-loader [isLoading]="isLoading"></app-loader>
   </div>
 </div>
