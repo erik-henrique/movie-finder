@@ -25,6 +25,16 @@
       <i (click)="findMovies()" class="fas fa-search"></i>
     </div>
   </form>
+  <div class="movies-grid">
+    <ng-container *ngFor="let movieResponse of moviesFound">
+      <app-movie-card
+        [movie]="movie"
+        *ngFor="let movie of movieResponse.results"
+      >
+      </app-movie-card>
+    </ng-container>
+  </div>
+
   <div class="loader">
     <app-loader [isLoading]="isLoading"></app-loader>
   </div>

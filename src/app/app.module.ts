@@ -9,7 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '@shared';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeModule } from './home/home.module';
+import { HomeModule } from './pages/home/home.module';
 import { ShellModule } from './shell/shell.module';
 
 @NgModule({
