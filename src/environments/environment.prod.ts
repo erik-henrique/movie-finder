@@ -12,6 +12,7 @@ export const environment = {
   version: env.npm_package_version,
   serverUrl: 'https://api.themoviedb.org/3',
   api_key: 'feb6f0eeaa0a72662967d77079850353',
+  movieImageResourceURL: 'https://www.themoviedb.org/t/p/w600_and_h900_face',
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US'],
 };

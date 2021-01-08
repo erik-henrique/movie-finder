@@ -78,6 +78,15 @@
     }
   }
 
+  > .movies-grid {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 2rem;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
   > .loader {
     margin-top: 1rem;
   }

@@ -53,6 +53,7 @@ export class HomeComponent implements OnInit {
 
   deleteMovieToFind(movieTerm: string): void {
     this.movieTerms.delete(movieTerm);
+    this.findMovies();
   }
 
   async findMovies() {
