@@ -20,6 +20,7 @@
         type="text"
         class="search-input"
         id="search-input"
+        placeholder="{{ 'TypesomethingAndPressEnter' | translate }}"
         (keyup.enter)="addMovieToFind()"
       />
       <i (click)="findMovies()" class="fas fa-search"></i>

@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import IAPIResponseLazyLoading from '@models/api_response_lazy_loading';
-import IMovie from '@models/movie';
+import { IAPIResponseLazyLoading } from '@models/api_response_lazy_loading';
+import { IMovie } from '@models/movie';
 import { Observable } from 'rxjs';
 import { environment } from './../../../../environments/environment.prod';
 

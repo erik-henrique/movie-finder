@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MovieService } from '@api/movie/movie.service';
-import IAPIResponseLazyLoading from '@models/api_response_lazy_loading';
-import IMovie from '@models/movie';
+import { IAPIResponseLazyLoading } from '@models/api_response_lazy_loading';
+import { IMovie } from '@models/movie';
 
 @Component({
   selector: 'app-home',
@@ -24,11 +24,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    this.form.valueChanges.subscribe((data) => {
-      console.log(data);
-    });
-  }
+  ngOnInit(): void {}
 
   addMovieToFind(): void {
     if (this.form.invalid) {
