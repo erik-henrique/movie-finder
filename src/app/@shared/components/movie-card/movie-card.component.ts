@@ -5,7 +5,7 @@ import {
   OnInit,
 } from '@angular/core';
 import { environment } from '@env/environment';
-import IMovie from '@models/movie';
+import { IMovie } from '@models/movie';
 
 @Component({
   selector: 'app-movie-card',

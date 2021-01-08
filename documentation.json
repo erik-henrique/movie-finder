@@ -1,0 +1,2598 @@
+{
+  "pipes": [],
+  "interfaces": [
+    {
+      "name": "IAPIResponseLazyLoading",
+      "id": "interface-IAPIResponseLazyLoading-1bdc4a74ff8e45375d5323a68fa54ab4",
+      "file": "src/app/@shared/models/api_response_lazy_loading.ts",
+      "type": "interface",
+      "sourceCode": "export interface IAPIResponseLazyLoading<T> {\n  page: number;\n  results: T[];\n  total_pages: number;\n}\n",
+      "properties": [
+        {
+          "name": "page",
+          "type": "number",
+          "optional": false,
+          "description": "",
+          "line": 2
+        },
+        {
+          "name": "results",
+          "type": "T[]",
+          "optional": false,
+          "description": "",
+          "line": 3
+        },
+        {
+          "name": "total_pages",
+          "type": "number",
+          "optional": false,
+          "description": "",
+          "line": 4
+        }
+      ],
+      "indexSignatures": [],
+      "kind": 150,
+      "methods": []
+    },
+    {
+      "name": "IMovie",
+      "id": "interface-IMovie-25f5f084f524f9b7c42094dd51f5a59d",
+      "file": "src/app/@shared/models/movie.ts",
+      "type": "interface",
+      "sourceCode": "export interface IMovie {\n  adult: boolean;\n  backdrop_path: null | string;\n  genre_ids: number[];\n  id: number;\n  original_language: IOriginalLanguage;\n  original_title: string;\n  overview: string;\n  popularity: number;\n  poster_path: null | string;\n  release_date: string;\n  title: string;\n  video: boolean;\n  vote_average: number;\n  vote_count: number;\n}\n\nexport enum IOriginalLanguage {\n  En = 'en',\n  Es = 'es',\n}\n",
+      "properties": [
+        {
+          "name": "adult",
+          "type": "boolean",
+          "optional": false,
+          "description": "",
+          "line": 2
+        },
+        {
+          "name": "backdrop_path",
+          "type": "null | string",
+          "optional": false,
+          "description": "",
+          "line": 3
+        },
+        {
+          "name": "genre_ids",
+          "type": "number[]",
+          "optional": false,
+          "description": "",
+          "line": 4
+        },
+        {
+          "name": "id",
+          "type": "number",
+          "optional": false,
+          "description": "",
+          "line": 5
+        },
+        {
+          "name": "original_language",
+          "type": "IOriginalLanguage",
+          "optional": false,
+          "description": "",
+          "line": 6
+        },
+        {
+          "name": "original_title",
+          "type": "string",
+          "optional": false,
+          "description": "",
+          "line": 7
+        },
+        {
+          "name": "overview",
+          "type": "string",
+          "optional": false,
+          "description": "",
+          "line": 8
+        },
+        {
+          "name": "popularity",
+          "type": "number",
+          "optional": false,
+          "description": "",
+          "line": 9
+        },
+        {
+          "name": "poster_path",
+          "type": "null | string",
+          "optional": false,
+          "description": "",
+          "line": 10
+        },
+        {
+          "name": "release_date",
+          "type": "string",
+          "optional": false,
+          "description": "",
+          "line": 11
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "optional": false,
+          "description": "",
+          "line": 12
+        },
+        {
+          "name": "video",
+          "type": "boolean",
+          "optional": false,
+          "description": "",
+          "line": 13
+        },
+        {
+          "name": "vote_average",
+          "type": "number",
+          "optional": false,
+          "description": "",
+          "line": 14
+        },
+        {
+          "name": "vote_count",
+          "type": "number",
+          "optional": false,
+          "description": "",
+          "line": 15
+        }
+      ],
+      "indexSignatures": [],
+      "kind": 150,
+      "methods": []
+    }
+  ],
+  "injectables": [
+    {
+      "name": "I18nService",
+      "id": "injectable-I18nService-0a64e07e837bc2f2614bcef661b6a59e",
+      "file": "src/app/i18n/i18n.service.ts",
+      "properties": [
+        {
+          "name": "defaultLanguage",
+          "type": "string",
+          "optional": false,
+          "description": "",
+          "line": 15
+        },
+        {
+          "name": "langChangeSubscription",
+          "type": "Subscription",
+          "optional": false,
+          "description": "",
+          "line": 18,
+          "modifierKind": [112]
+        },
+        {
+          "name": "supportedLanguages",
+          "type": "string[]",
+          "optional": false,
+          "description": "",
+          "line": 16
+        }
+      ],
+      "methods": [
+        {
+          "name": "destroy",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 47,
+          "description": "<p>Cleans up language change subscription.</p>\n"
+        },
+        {
+          "name": "init",
+          "args": [
+            {
+              "name": "defaultLanguage",
+              "type": "string"
+            },
+            {
+              "name": "supportedLanguages",
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 31,
+          "description": "<p>Initializes i18n for the application.\nLoads language from local storage if present, or sets default language.</p>\n",
+          "jsdoctags": [
+            {
+              "name": {
+                "pos": 810,
+                "end": 825,
+                "flags": 0,
+                "escapedText": "defaultLanguage"
+              },
+              "type": "string",
+              "tagName": {
+                "pos": 804,
+                "end": 809,
+                "flags": 0,
+                "escapedText": "param"
+              },
+              "comment": "<p>The default language to use.</p>\n"
+            },
+            {
+              "name": {
+                "pos": 867,
+                "end": 885,
+                "flags": 0,
+                "escapedText": "supportedLanguages"
+              },
+              "type": "string[]",
+              "tagName": {
+                "pos": 861,
+                "end": 866,
+                "flags": 0,
+                "escapedText": "param"
+              },
+              "comment": "<p>The list of supported languages.</p>\n"
+            }
+          ]
+        }
+      ],
+      "description": "",
+      "sourceCode": "import { Injectable } from '@angular/core';\nimport { TranslateService, LangChangeEvent } from '@ngx-translate/core';\nimport { Subscription } from 'rxjs';\n\nimport { Logger } from '@core/logger.service';\nimport enUS from '../../translations/en-US.json';\n\nconst log = new Logger('I18nService');\nconst languageKey = 'language';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class I18nService {\n  defaultLanguage!: string;\n  supportedLanguages!: string[];\n\n  private langChangeSubscription!: Subscription;\n\n  constructor(private translateService: TranslateService) {\n    // Embed languages to avoid extra HTTP requests\n    translateService.setTranslation('en-US', enUS);\n  }\n\n  /**\n   * Initializes i18n for the application.\n   * Loads language from local storage if present, or sets default language.\n   * @param defaultLanguage The default language to use.\n   * @param supportedLanguages The list of supported languages.\n   */\n  init(defaultLanguage: string, supportedLanguages: string[]) {\n    this.defaultLanguage = defaultLanguage;\n    this.supportedLanguages = supportedLanguages;\n    this.language = '';\n\n    // Warning: this subscription will always be alive for the app's lifetime\n    this.langChangeSubscription = this.translateService.onLangChange.subscribe(\n      (event: LangChangeEvent) => {\n        localStorage.setItem(languageKey, event.lang);\n      }\n    );\n  }\n\n  /**\n   * Cleans up language change subscription.\n   */\n  destroy() {\n    if (this.langChangeSubscription) {\n      this.langChangeSubscription.unsubscribe();\n    }\n  }\n\n  /**\n   * Sets the current language.\n   * Note: The current language is saved to the local storage.\n   * If no parameter is specified, the language is loaded from local storage (if present).\n   * @param language The IETF language code to set.\n   */\n  set language(language: string) {\n    language =\n      language ||\n      localStorage.getItem(languageKey) ||\n      this.translateService.getBrowserCultureLang();\n    let isSupportedLanguage = this.supportedLanguages.includes(language);\n\n    // If no exact match is found, search without the region\n    if (language && !isSupportedLanguage) {\n      language = language.split('-')[0];\n      language =\n        this.supportedLanguages.find((supportedLanguage) =>\n          supportedLanguage.startsWith(language)\n        ) || '';\n      isSupportedLanguage = Boolean(language);\n    }\n\n    // Fallback if language is not supported\n    if (!isSupportedLanguage) {\n      language = this.defaultLanguage;\n    }\n\n    log.debug(`Language set to ${language}`);\n    this.translateService.use(language);\n  }\n\n  /**\n   * Gets the current language.\n   * @return The current language code.\n   */\n  get language(): string {\n    return this.translateService.currentLang;\n  }\n}\n",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "args": [
+          {
+            "name": "translateService",
+            "type": "TranslateService"
+          }
+        ],
+        "line": 18,
+        "jsdoctags": [
+          {
+            "name": "translateService",
+            "type": "TranslateService",
+            "tagName": {
+              "text": "param"
+            }
+          }
+        ]
+      },
+      "accessors": {
+        "language": {
+          "name": "language",
+          "setSignature": {
+            "name": "language",
+            "type": "void",
+            "args": [
+              {
+                "name": "language",
+                "type": "string"
+              }
+            ],
+            "returnType": "void",
+            "line": 59,
+            "description": "<p>Sets the current language.\nNote: The current language is saved to the local storage.\nIf no parameter is specified, the language is loaded from local storage (if present).</p>\n",
+            "jsdoctags": [
+              {
+                "name": {
+                  "pos": 1751,
+                  "end": 1759,
+                  "flags": 0,
+                  "escapedText": "language"
+                },
+                "type": "string",
+                "tagName": {
+                  "pos": 1745,
+                  "end": 1750,
+                  "flags": 0,
+                  "escapedText": "param"
+                },
+                "comment": "<p>The IETF language code to set.</p>\n"
+              }
+            ]
+          },
+          "getSignature": {
+            "name": "language",
+            "type": "string",
+            "returnType": "string",
+            "line": 89,
+            "description": "<p>Gets the current language.</p>\n",
+            "jsdoctags": [
+              {
+                "pos": 2637,
+                "end": 2645,
+                "flags": 0,
+                "kind": 293,
+                "atToken": {
+                  "pos": 2637,
+                  "end": 2638,
+                  "flags": 0,
+                  "kind": 57
+                },
+                "tagName": {
+                  "pos": 2638,
+                  "end": 2644,
+                  "flags": 0,
+                  "escapedText": "return"
+                },
+                "comment": "<p>The current language code.</p>\n"
+              }
+            ]
+          }
+        }
+      },
+      "type": "injectable"
+    },
+    {
+      "name": "MovieService",
+      "id": "injectable-MovieService-47ed6bb7210afb0fa5f3d51c79bf1dbb",
+      "file": "src/app/@shared/api/movie/movie.service.ts",
+      "properties": [
+        {
+          "name": "endpoint",
+          "defaultValue": "`${environment.serverUrl}/search/movie`",
+          "type": "",
+          "optional": false,
+          "description": "",
+          "line": 12,
+          "modifierKind": [112]
+        }
+      ],
+      "methods": [
+        {
+          "name": "getMovies",
+          "args": [
+            {
+              "name": "term",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "returnType": "Observable<IAPIResponseLazyLoading<IMovie>>",
+          "typeParameters": [],
+          "line": 16,
+          "jsdoctags": [
+            {
+              "name": "term",
+              "type": "string",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        }
+      ],
+      "description": "",
+      "sourceCode": "import { HttpClient, HttpParams } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { IAPIResponseLazyLoading } from '@models/api_response_lazy_loading';\nimport { IMovie } from '@models/movie';\nimport { Observable } from 'rxjs';\nimport { environment } from './../../../../environments/environment.prod';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class MovieService {\n  private endpoint = `${environment.serverUrl}/search/movie`;\n\n  constructor(private readonly httpClient: HttpClient) {}\n\n  getMovies(term: string): Observable<IAPIResponseLazyLoading<IMovie>> {\n    const params = new HttpParams({\n      fromObject: {\n        query: term,\n      },\n    });\n\n    return this.httpClient.get<IAPIResponseLazyLoading<IMovie>>(this.endpoint, {\n      params,\n    });\n  }\n}\n",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "args": [
+          {
+            "name": "httpClient",
+            "type": "HttpClient"
+          }
+        ],
+        "line": 12,
+        "jsdoctags": [
+          {
+            "name": "httpClient",
+            "type": "HttpClient",
+            "tagName": {
+              "text": "param"
+            }
+          }
+        ]
+      },
+      "type": "injectable"
+    },
+    {
+      "name": "RouteReusableStrategy",
+      "id": "injectable-RouteReusableStrategy-5a7d8e31958e7938a3eb4fa15c300430",
+      "file": "src/app/@core/route-reusable-strategy.ts",
+      "properties": [],
+      "methods": [
+        {
+          "name": "retrieve",
+          "args": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot"
+            }
+          ],
+          "optional": false,
+          "returnType": "DetachedRouteHandle | null",
+          "typeParameters": [],
+          "line": 28,
+          "modifierKind": [114],
+          "jsdoctags": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "shouldAttach",
+          "args": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot"
+            }
+          ],
+          "optional": false,
+          "returnType": "boolean",
+          "typeParameters": [],
+          "line": 24,
+          "modifierKind": [114],
+          "jsdoctags": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "shouldDetach",
+          "args": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot"
+            }
+          ],
+          "optional": false,
+          "returnType": "boolean",
+          "typeParameters": [],
+          "line": 15,
+          "modifierKind": [114],
+          "jsdoctags": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "shouldReuseRoute",
+          "args": [
+            {
+              "name": "future",
+              "type": "ActivatedRouteSnapshot"
+            },
+            {
+              "name": "curr",
+              "type": "ActivatedRouteSnapshot"
+            }
+          ],
+          "optional": false,
+          "returnType": "boolean",
+          "typeParameters": [],
+          "line": 32,
+          "modifierKind": [114],
+          "jsdoctags": [
+            {
+              "name": "future",
+              "type": "ActivatedRouteSnapshot",
+              "tagName": {
+                "text": "param"
+              }
+            },
+            {
+              "name": "curr",
+              "type": "ActivatedRouteSnapshot",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "store",
+          "args": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot"
+            },
+            {
+              "name": "detachedTree",
+              "type": "DetachedRouteHandle | null"
+            }
+          ],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 19,
+          "modifierKind": [114],
+          "jsdoctags": [
+            {
+              "name": "route",
+              "type": "ActivatedRouteSnapshot",
+              "tagName": {
+                "text": "param"
+              }
+            },
+            {
+              "name": "detachedTree",
+              "type": "DetachedRouteHandle | null",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        }
+      ],
+      "description": "<p>A route strategy allowing for explicit route reuse.\nUsed as a workaround for <a href=\"https://github.com/angular/angular/issues/18374\">https://github.com/angular/angular/issues/18374</a>\nTo reuse a given route, add <code>data: { reuse: true }</code> to the route definition.</p>\n",
+      "sourceCode": "import {\n  ActivatedRouteSnapshot,\n  DetachedRouteHandle,\n  RouteReuseStrategy,\n} from '@angular/router';\nimport { Injectable } from '@angular/core';\n\n/**\n * A route strategy allowing for explicit route reuse.\n * Used as a workaround for https://github.com/angular/angular/issues/18374\n * To reuse a given route, add `data: { reuse: true }` to the route definition.\n */\n@Injectable()\nexport class RouteReusableStrategy extends RouteReuseStrategy {\n  public shouldDetach(route: ActivatedRouteSnapshot): boolean {\n    return false;\n  }\n\n  public store(\n    route: ActivatedRouteSnapshot,\n    detachedTree: DetachedRouteHandle | null\n  ): void {}\n\n  public shouldAttach(route: ActivatedRouteSnapshot): boolean {\n    return false;\n  }\n\n  public retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle | null {\n    return null;\n  }\n\n  public shouldReuseRoute(\n    future: ActivatedRouteSnapshot,\n    curr: ActivatedRouteSnapshot\n  ): boolean {\n    return future.routeConfig === curr.routeConfig || future.data.reuse;\n  }\n}\n",
+      "extends": "RouteReuseStrategy",
+      "type": "injectable"
+    }
+  ],
+  "classes": [
+    {
+      "name": "AppSharedPage",
+      "id": "class-AppSharedPage-9ccb369f241011d68ade22ae0c069c99",
+      "file": "e2e/src/page-objects/app-shared.po.ts",
+      "type": "class",
+      "sourceCode": "import { browser, element, by } from 'protractor';\n\nexport class AppSharedPage {\n  async navigateAndSetLanguage() {\n    // Forces default language\n    await this.navigateTo();\n    await browser.executeScript(() =>\n      localStorage.setItem('language', 'en-US')\n    );\n  }\n\n  async navigateTo() {\n    await browser.get('/');\n  }\n}\n",
+      "properties": [],
+      "methods": [
+        {
+          "name": "navigateAndSetLanguage",
+          "args": [],
+          "optional": false,
+          "returnType": "any",
+          "typeParameters": [],
+          "line": 9,
+          "modifierKind": [120]
+        },
+        {
+          "name": "navigateTo",
+          "args": [],
+          "optional": false,
+          "returnType": "any",
+          "typeParameters": [],
+          "line": 17,
+          "modifierKind": [120]
+        }
+      ],
+      "indexSignatures": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "hostBindings": [],
+      "hostListeners": []
+    },
+    {
+      "name": "Logger",
+      "id": "class-Logger-b586960759d6e2b879d1bbaec985daa0",
+      "file": "src/app/@core/logger.service.ts",
+      "type": "class",
+      "sourceCode": "export enum LogLevel {\n  Off = 0,\n  Error,\n  Warning,\n  Info,\n  Debug,\n}\n\n/**\n * Log output handler function.\n */\nexport type LogOutput = (\n  source: string | undefined,\n  level: LogLevel,\n  ...objects: any[]\n) => void;\n\nexport class Logger {\n  /**\n   * Current logging level.\n   * Set it to LogLevel.Off to disable logs completely.\n   */\n  static level = LogLevel.Debug;\n\n  /**\n   * Additional log outputs.\n   */\n  static outputs: LogOutput[] = [];\n\n  /**\n   * Enables production mode.\n   * Sets logging level to LogLevel.Warning.\n   */\n  static enableProductionMode() {\n    Logger.level = LogLevel.Warning;\n  }\n\n  constructor(private source?: string) {}\n\n  /**\n   * Logs messages or objects  with the debug level.\n   * Works the same as console.log().\n   */\n  debug(...objects: any[]) {\n    this.log(console.log, LogLevel.Debug, objects);\n  }\n\n  /**\n   * Logs messages or objects  with the info level.\n   * Works the same as console.log().\n   */\n  info(...objects: any[]) {\n    this.log(console.info, LogLevel.Info, objects);\n  }\n\n  /**\n   * Logs messages or objects  with the warning level.\n   * Works the same as console.log().\n   */\n  warn(...objects: any[]) {\n    this.log(console.warn, LogLevel.Warning, objects);\n  }\n\n  /**\n   * Logs messages or objects  with the error level.\n   * Works the same as console.log().\n   */\n  error(...objects: any[]) {\n    this.log(console.error, LogLevel.Error, objects);\n  }\n\n  private log(func: (...args: any[]) => void, level: LogLevel, objects: any[]) {\n    if (level <= Logger.level) {\n      const log = this.source\n        ? ['[' + this.source + ']'].concat(objects)\n        : objects;\n      func.apply(console, log);\n      Logger.outputs.forEach((output) =>\n        output.apply(output, [this.source, level, ...objects])\n      );\n    }\n  }\n}\n",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "args": [
+          {
+            "name": "source",
+            "type": "string",
+            "optional": true
+          }
+        ],
+        "line": 72,
+        "jsdoctags": [
+          {
+            "name": "source",
+            "type": "string",
+            "optional": true,
+            "tagName": {
+              "text": "param"
+            }
+          }
+        ]
+      },
+      "properties": [
+        {
+          "name": "level",
+          "defaultValue": "LogLevel.Debug",
+          "type": "",
+          "optional": false,
+          "description": "<p>Current logging level.\nSet it to LogLevel.Off to disable logs completely.</p>\n",
+          "line": 59,
+          "modifierKind": [115]
+        },
+        {
+          "name": "outputs",
+          "defaultValue": "[]",
+          "type": "LogOutput[]",
+          "optional": false,
+          "description": "<p>Additional log outputs.</p>\n",
+          "line": 64,
+          "modifierKind": [115]
+        }
+      ],
+      "methods": [
+        {
+          "name": "debug",
+          "args": [
+            {
+              "name": "objects",
+              "type": "any[]",
+              "dotDotDotToken": true
+            }
+          ],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 80,
+          "description": "<p>Logs messages or objects  with the debug level.\nWorks the same as console.log().</p>\n",
+          "jsdoctags": [
+            {
+              "name": "objects",
+              "type": "any[]",
+              "dotDotDotToken": true,
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "enableProductionMode",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 70,
+          "description": "<p>Enables production mode.\nSets logging level to LogLevel.Warning.</p>\n",
+          "modifierKind": [115]
+        },
+        {
+          "name": "error",
+          "args": [
+            {
+              "name": "objects",
+              "type": "any[]",
+              "dotDotDotToken": true
+            }
+          ],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 104,
+          "description": "<p>Logs messages or objects  with the error level.\nWorks the same as console.log().</p>\n",
+          "jsdoctags": [
+            {
+              "name": "objects",
+              "type": "any[]",
+              "dotDotDotToken": true,
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "info",
+          "args": [
+            {
+              "name": "objects",
+              "type": "any[]",
+              "dotDotDotToken": true
+            }
+          ],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 88,
+          "description": "<p>Logs messages or objects  with the info level.\nWorks the same as console.log().</p>\n",
+          "jsdoctags": [
+            {
+              "name": "objects",
+              "type": "any[]",
+              "dotDotDotToken": true,
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "log",
+          "args": [
+            {
+              "name": "func",
+              "type": "function",
+              "function": [
+                {
+                  "name": "args",
+                  "type": "any[]",
+                  "dotDotDotToken": true
+                }
+              ]
+            },
+            {
+              "name": "level",
+              "type": "LogLevel"
+            },
+            {
+              "name": "objects",
+              "type": "any[]"
+            }
+          ],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 108,
+          "modifierKind": [112],
+          "jsdoctags": [
+            {
+              "name": "func",
+              "type": "function",
+              "function": [
+                {
+                  "name": "args",
+                  "type": "any[]",
+                  "dotDotDotToken": true
+                }
+              ],
+              "tagName": {
+                "text": "param"
+              }
+            },
+            {
+              "name": "level",
+              "type": "LogLevel",
+              "tagName": {
+                "text": "param"
+              }
+            },
+            {
+              "name": "objects",
+              "type": "any[]",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "warn",
+          "args": [
+            {
+              "name": "objects",
+              "type": "any[]",
+              "dotDotDotToken": true
+            }
+          ],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 96,
+          "description": "<p>Logs messages or objects  with the warning level.\nWorks the same as console.log().</p>\n",
+          "jsdoctags": [
+            {
+              "name": "objects",
+              "type": "any[]",
+              "dotDotDotToken": true,
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        }
+      ],
+      "indexSignatures": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "hostBindings": [],
+      "hostListeners": []
+    },
+    {
+      "name": "Shell",
+      "id": "class-Shell-2916b582b2c23c9609b8fad5e79e636e",
+      "file": "src/app/shell/shell.service.ts",
+      "type": "class",
+      "sourceCode": "import { Routes, Route } from '@angular/router';\n\nimport { ShellComponent } from './shell.component';\n\n/**\n * Provides helper methods to create routes.\n */\nexport class Shell {\n  /**\n   * Creates routes using the shell component and authentication.\n   * @param routes The routes to add.\n   * @return The new route using shell as the base.\n   */\n  static childRoutes(routes: Routes): Route {\n    return {\n      path: '',\n      component: ShellComponent,\n      children: routes,\n      // Reuse ShellComponent instance when navigating between child views\n      data: { reuse: true },\n    };\n  }\n}\n",
+      "properties": [],
+      "description": "<p>Provides helper methods to create routes.</p>\n",
+      "rawdescription": "Provides helper methods to create routes.",
+      "methods": [
+        {
+          "name": "childRoutes",
+          "args": [
+            {
+              "name": "routes",
+              "type": "Routes"
+            }
+          ],
+          "optional": false,
+          "returnType": "Route",
+          "typeParameters": [],
+          "line": 14,
+          "description": "<p>Creates routes using the shell component and authentication.</p>\n",
+          "modifierKind": [115],
+          "jsdoctags": [
+            {
+              "name": {
+                "pos": 261,
+                "end": 267,
+                "flags": 0,
+                "escapedText": "routes"
+              },
+              "type": "Routes",
+              "tagName": {
+                "pos": 255,
+                "end": 260,
+                "flags": 0,
+                "escapedText": "param"
+              },
+              "comment": "<p>The routes to add.</p>\n"
+            },
+            {
+              "tagName": {
+                "pos": 293,
+                "end": 299,
+                "flags": 0,
+                "escapedText": "return"
+              },
+              "comment": "<p>The new route using shell as the base.</p>\n"
+            }
+          ]
+        }
+      ],
+      "indexSignatures": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "hostBindings": [],
+      "hostListeners": []
+    },
+    {
+      "name": "ShellPage",
+      "id": "class-ShellPage-c5f8054cf23fa7e87c50717ee9d0fedb",
+      "file": "e2e/src/page-objects/shell.po.ts",
+      "type": "class",
+      "sourceCode": "import { browser, element, by } from 'protractor';\n\nexport class ShellPage {\n  welcomeText = element(by.css('app-root h1'));\n\n  getParagraphText() {\n    return this.welcomeText.getText();\n  }\n}\n",
+      "properties": [
+        {
+          "name": "welcomeText",
+          "defaultValue": "element(by.css('app-root h1'))",
+          "type": "",
+          "optional": false,
+          "description": "",
+          "line": 9
+        }
+      ],
+      "methods": [
+        {
+          "name": "getParagraphText",
+          "args": [],
+          "optional": false,
+          "returnType": "any",
+          "typeParameters": [],
+          "line": 11
+        }
+      ],
+      "indexSignatures": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "hostBindings": [],
+      "hostListeners": []
+    }
+  ],
+  "directives": [],
+  "components": [
+    {
+      "name": "AppComponent",
+      "id": "component-AppComponent-3d30653a733dff91f7805cece93df38a",
+      "file": "src/app/app.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-root",
+      "styleUrls": ["./app.component.scss"],
+      "styles": [],
+      "templateUrl": ["./app.component.html"],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnDestroy",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 67
+        },
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 27
+        }
+      ],
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "",
+      "type": "component",
+      "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { Title } from '@angular/platform-browser';\nimport { ActivatedRoute, NavigationEnd, Router } from '@angular/router';\nimport { I18nService } from '@app/i18n';\nimport { Logger, untilDestroyed } from '@core';\nimport { environment } from '@env/environment';\nimport { TranslateService } from '@ngx-translate/core';\nimport { merge } from 'rxjs';\nimport { filter, map, switchMap } from 'rxjs/operators';\n\nconst log = new Logger('App');\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent implements OnInit, OnDestroy {\n  constructor(\n    private router: Router,\n    private activatedRoute: ActivatedRoute,\n    private titleService: Title,\n    private translateService: TranslateService,\n    private i18nService: I18nService\n  ) {}\n\n  ngOnInit() {\n    // Setup logger\n    if (environment.production) {\n      Logger.enableProductionMode();\n    }\n\n    log.debug('init');\n\n    // Setup translations\n    this.i18nService.init(\n      environment.defaultLanguage,\n      environment.supportedLanguages\n    );\n\n    const onNavigationEnd = this.router.events.pipe(\n      filter((event) => event instanceof NavigationEnd)\n    );\n\n    // Change page title on navigation or language change, based on route data\n    merge(this.translateService.onLangChange, onNavigationEnd)\n      .pipe(\n        map(() => {\n          let route = this.activatedRoute;\n          while (route.firstChild) {\n            route = route.firstChild;\n          }\n          return route;\n        }),\n        filter((route) => route.outlet === 'primary'),\n        switchMap((route) => route.data),\n        untilDestroyed(this)\n      )\n      .subscribe((event) => {\n        const title = event.title;\n        if (title) {\n          this.titleService.setTitle(this.translateService.instant(title));\n        }\n      });\n  }\n\n  ngOnDestroy() {\n    this.i18nService.destroy();\n  }\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./app.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "args": [
+          {
+            "name": "router",
+            "type": "Router"
+          },
+          {
+            "name": "activatedRoute",
+            "type": "ActivatedRoute"
+          },
+          {
+            "name": "titleService",
+            "type": "Title"
+          },
+          {
+            "name": "translateService",
+            "type": "TranslateService"
+          },
+          {
+            "name": "i18nService",
+            "type": "I18nService"
+          }
+        ],
+        "line": 18,
+        "jsdoctags": [
+          {
+            "name": "router",
+            "type": "Router",
+            "tagName": {
+              "text": "param"
+            }
+          },
+          {
+            "name": "activatedRoute",
+            "type": "ActivatedRoute",
+            "tagName": {
+              "text": "param"
+            }
+          },
+          {
+            "name": "titleService",
+            "type": "Title",
+            "tagName": {
+              "text": "param"
+            }
+          },
+          {
+            "name": "translateService",
+            "type": "TranslateService",
+            "tagName": {
+              "text": "param"
+            }
+          },
+          {
+            "name": "i18nService",
+            "type": "I18nService",
+            "tagName": {
+              "text": "param"
+            }
+          }
+        ]
+      },
+      "implements": ["OnInit", "OnDestroy"],
+      "templateData": "<router-outlet></router-outlet>\n"
+    },
+    {
+      "name": "HeaderComponent",
+      "id": "component-HeaderComponent-cb7e33d9261835ce3d11aa4537fae5bd",
+      "file": "src/app/shell/header/header.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-header",
+      "styleUrls": ["./header.component.scss"],
+      "styles": [],
+      "templateUrl": ["./header.component.html"],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [
+        {
+          "name": "menuHidden",
+          "defaultValue": "true",
+          "type": "",
+          "optional": false,
+          "description": "",
+          "line": 9
+        }
+      ],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 13
+        },
+        {
+          "name": "toggleMenu",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 15
+        }
+      ],
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrls: ['./header.component.scss'],\n})\nexport class HeaderComponent implements OnInit {\n  menuHidden = true;\n\n  constructor() {}\n\n  ngOnInit() {}\n\n  toggleMenu() {\n    this.menuHidden = !this.menuHidden;\n  }\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "@import \"src/theme/theme-variables\";\n\n.navbar {\n  margin-bottom: 1rem;\n}\n\n.nav-link.dropdown-toggle {\n  cursor: pointer;\n}\n",
+          "styleUrl": "./header.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "args": [],
+        "line": 9
+      },
+      "implements": ["OnInit"],
+      "templateData": "<!-- <header>\n  <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n    <a class=\"navbar-brand\" href=\"https://github.com/ngx-rocket\" translate>APP_NAME</a>\n    <button\n      class=\"navbar-toggler\"\n      type=\"button\"\n      aria-controls=\"navbar-menu\"\n      aria-label=\"Toggle navigation\"\n      (click)=\"toggleMenu()\"\n      [attr.aria-expanded]=\"!menuHidden\"\n    >\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div id=\"navbar-menu\" class=\"collapse navbar-collapse float-xs-none\" [ngbCollapse]=\"menuHidden\">\n      <div class=\"navbar-nav\">\n        <a class=\"nav-item nav-link text-uppercase\" routerLink=\"/home\" routerLinkActive=\"active\">\n          <i class=\"fas fa-home\"></i>\n          <span translate>Home</span>\n        </a>\n        <a class=\"nav-item nav-link text-uppercase\" routerLink=\"/about\" routerLinkActive=\"active\">\n          <i class=\"fas fa-question-circle\"></i>\n          <span translate>About</span>\n        </a>\n      </div>\n      <div class=\"navbar-nav ml-auto\">\n        <app-language-selector inNavbar=\"true\" menuClass=\"dropdown-menu dropdown-menu-right\"></app-language-selector>\n      </div>\n    </div>\n  </nav>\n</header> -->\n"
+    },
+    {
+      "name": "HomeComponent",
+      "id": "component-HomeComponent-b4df3644e9648cd9a545b3559c856d07",
+      "file": "src/app/pages/home/home.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-home",
+      "styleUrls": ["./home.component.scss"],
+      "styles": [],
+      "templateUrl": ["./home.component.html"],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [
+        {
+          "name": "form",
+          "type": "FormGroup",
+          "optional": false,
+          "description": "",
+          "line": 15
+        },
+        {
+          "name": "isLoading",
+          "defaultValue": "false",
+          "type": "",
+          "optional": false,
+          "description": "",
+          "line": 13
+        },
+        {
+          "name": "moviesFound",
+          "type": "IAPIResponseLazyLoading<IMovie>[]",
+          "optional": false,
+          "description": "",
+          "line": 16
+        },
+        {
+          "name": "movieTerms",
+          "defaultValue": "new Set<string>()",
+          "type": "",
+          "optional": false,
+          "description": "",
+          "line": 14
+        }
+      ],
+      "methodsClass": [
+        {
+          "name": "addMovieToFind",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 29
+        },
+        {
+          "name": "deleteMovieToFind",
+          "args": [
+            {
+              "name": "movieTerm",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 50,
+          "jsdoctags": [
+            {
+              "name": "movieTerm",
+              "type": "string",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "findMovies",
+          "args": [],
+          "optional": false,
+          "returnType": "any",
+          "typeParameters": [],
+          "line": 55,
+          "modifierKind": [120]
+        },
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 27
+        }
+      ],
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { FormBuilder, FormGroup, Validators } from '@angular/forms';\nimport { MovieService } from '@api/movie/movie.service';\nimport { IAPIResponseLazyLoading } from '@models/api_response_lazy_loading';\nimport { IMovie } from '@models/movie';\n\n@Component({\n  selector: 'app-home',\n  templateUrl: './home.component.html',\n  styleUrls: ['./home.component.scss'],\n})\nexport class HomeComponent implements OnInit {\n  isLoading = false;\n  movieTerms = new Set<string>();\n  form: FormGroup;\n  moviesFound: IAPIResponseLazyLoading<IMovie>[];\n\n  constructor(\n    private readonly formBuilder: FormBuilder,\n    private readonly movieService: MovieService\n  ) {\n    this.form = this.formBuilder.group({\n      movieTerm: this.formBuilder.control('', [Validators.required]),\n    });\n  }\n\n  ngOnInit(): void {}\n\n  addMovieToFind(): void {\n    if (this.form.invalid) {\n      return;\n    }\n\n    if (!this.movieTerms.has(this.movieTerm)) {\n      this.movieTerms.add(this.movieTerm);\n    }\n\n    this.form.reset();\n  }\n\n  get movieTermsArray() {\n    return [...this.movieTerms];\n  }\n\n  get movieTerm(): string {\n    const { movieTerm } = this.form.value as { movieTerm: string };\n    return movieTerm;\n  }\n\n  deleteMovieToFind(movieTerm: string): void {\n    this.movieTerms.delete(movieTerm);\n    this.findMovies();\n  }\n\n  async findMovies() {\n    this.isLoading = true;\n\n    this.moviesFound = await Promise.all(\n      this.movieTermsArray.map((movieTerm) =>\n        this.movieService.getMovies(movieTerm).toPromise()\n      )\n    )\n      .catch((error) => {\n        console.error(error);\n        return error;\n      })\n      .finally(() => {\n        this.isLoading = false;\n      });\n  }\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "@import \"theme-variables.scss\";\n\n.home-container {\n  padding-left: 0.5rem;\n  padding-right: 0.5rem;\n  > .search-container {\n    box-sizing: border-box;\n    border-radius: 25px;\n    line-height: 1;\n    font-size: 1em;\n    background-color: $white;\n    height: 2.623rem;\n    margin-top: 1rem;\n    display: inline-flex;\n    width: 100%;\n    > .input-wrapper {\n      display: inline-block;\n      width: 100%;\n\n      position: relative;\n      > .search-input {\n        display: inline-block;\n        width: 90%;\n        min-height: 36px;\n        margin-left: 10px;\n        border: 0;\n        outline: none;\n        font-size: 0.9rem;\n        border-radius: 25px;\n        height: 100%;\n        padding: 0;\n      }\n\n      > .fa-search {\n        right: 1rem;\n        position: absolute;\n        margin-top: 0.8rem;\n        cursor: pointer;\n      }\n    }\n\n    > .chip {\n      margin: 5px;\n      height: 32px;\n      line-height: 32px;\n      display: inline-block;\n      background: $gray-200;\n      padding: 0 12px;\n      border-radius: 32px;\n      font-size: 13px;\n\n      white-space: nowrap;\n      &:hover {\n        background: $gray-300;\n      }\n\n      > .close-button {\n        border: none;\n        border-radius: 50%;\n        background-color: $gray-600;\n\n        border-radius: 50%;\n        line-height: 1.5rem;\n        margin-left: 0.5rem;\n        margin-top: 0.2rem;\n        height: 1.5rem;\n\n        display: inline-block;\n        &:hover {\n          cursor: pointer;\n          background-color: $gray-800;\n        }\n\n        > .close-icon {\n          color: $gray-100;\n        }\n      }\n    }\n  }\n\n  > .movies-grid {\n    padding-left: 0.5rem;\n    padding-right: 0.5rem;\n    margin-top: 2rem;\n    display: inline-flex;\n    flex-wrap: wrap;\n    gap: 2rem;\n  }\n\n  > .loader {\n    margin-top: 1rem;\n  }\n}\n",
+          "styleUrl": "./home.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "args": [
+          {
+            "name": "formBuilder",
+            "type": "FormBuilder"
+          },
+          {
+            "name": "movieService",
+            "type": "MovieService"
+          }
+        ],
+        "line": 16,
+        "jsdoctags": [
+          {
+            "name": "formBuilder",
+            "type": "FormBuilder",
+            "tagName": {
+              "text": "param"
+            }
+          },
+          {
+            "name": "movieService",
+            "type": "MovieService",
+            "tagName": {
+              "text": "param"
+            }
+          }
+        ]
+      },
+      "implements": ["OnInit"],
+      "accessors": {
+        "movieTermsArray": {
+          "name": "movieTermsArray",
+          "getSignature": {
+            "name": "movieTermsArray",
+            "type": "",
+            "returnType": "",
+            "line": 41
+          }
+        },
+        "movieTerm": {
+          "name": "movieTerm",
+          "getSignature": {
+            "name": "movieTerm",
+            "type": "string",
+            "returnType": "string",
+            "line": 45
+          }
+        }
+      },
+      "templateData": "<div class=\"home-container\">\n  <form\n    [formGroup]=\"form\"\n    (ngSubmit)=\"addMovieToFind()\"\n    class=\"search-container\"\n  >\n    <div class=\"chip\" *ngFor=\"let chip of movieTermsArray\">\n      <span>{{ chip }}</span>\n      <button\n        type=\"button\"\n        (click)=\"deleteMovieToFind(chip)\"\n        class=\"close-button\"\n      >\n        <i class=\"fas fa-times close-icon\"></i>\n      </button>\n    </div>\n    <div class=\"input-wrapper\">\n      <input\n        formControlName=\"movieTerm\"\n        type=\"text\"\n        class=\"search-input\"\n        id=\"search-input\"\n        placeholder=\"{{ 'TypesomethingAndPressEnter' | translate }}\"\n        (keyup.enter)=\"addMovieToFind()\"\n      />\n      <i (click)=\"findMovies()\" class=\"fas fa-search\"></i>\n    </div>\n  </form>\n  <div class=\"movies-grid\">\n    <ng-container *ngFor=\"let movieResponse of moviesFound\">\n      <app-movie-card\n        [movie]=\"movie\"\n        *ngFor=\"let movie of movieResponse.results\"\n      >\n      </app-movie-card>\n    </ng-container>\n  </div>\n\n  <div class=\"loader\">\n    <app-loader [isLoading]=\"isLoading\"></app-loader>\n  </div>\n</div>\n"
+    },
+    {
+      "name": "LoaderComponent",
+      "id": "component-LoaderComponent-54c2ba3c3971b862dc332daa7fc1fa14",
+      "file": "src/app/@shared/components/loader/loader.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-loader",
+      "styleUrls": ["./loader.component.scss"],
+      "styles": [],
+      "templateUrl": ["./loader.component.html"],
+      "viewProviders": [],
+      "inputsClass": [
+        {
+          "name": "isLoading",
+          "defaultValue": "false",
+          "line": 8
+        }
+      ],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 11
+        }
+      ],
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "",
+      "type": "component",
+      "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n@Component({\n  selector: 'app-loader',\n  templateUrl: './loader.component.html',\n  styleUrls: ['./loader.component.scss'],\n})\nexport class LoaderComponent implements OnInit {\n  @Input() isLoading = false;\n  constructor() {}\n\n  ngOnInit() {}\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "@import \"theme-variables.scss\";\n\n.loader-container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n\n  > .fa-spinner {\n    color: $white;\n  }\n}\n",
+          "styleUrl": "./loader.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": ["OnInit"],
+      "templateData": "<div [hidden]=\"!isLoading\">\n  <div class=\"loader-container\">\n    <i class=\"fas fa-spinner fa-spin fa-3x\"></i>\n  </div>\n</div>\n"
+    },
+    {
+      "name": "MovieCardComponent",
+      "id": "component-MovieCardComponent-274559bc152983b656bd731b2648f2d2",
+      "file": "src/app/@shared/components/movie-card/movie-card.component.ts",
+      "changeDetection": "ChangeDetectionStrategy.OnPush",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-movie-card",
+      "styleUrls": ["./movie-card.component.scss"],
+      "styles": [],
+      "templateUrl": ["./movie-card.component.html"],
+      "viewProviders": [],
+      "inputsClass": [
+        {
+          "name": "movie",
+          "line": 17,
+          "type": "IMovie"
+        }
+      ],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "buildBackgroundImageURL",
+          "args": [
+            {
+              "name": "image",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "returnType": "string",
+          "typeParameters": [],
+          "line": 22,
+          "jsdoctags": [
+            {
+              "name": "image",
+              "type": "string",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 20
+        },
+        {
+          "name": "truncate",
+          "args": [
+            {
+              "name": "input",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "returnType": "string",
+          "typeParameters": [],
+          "line": 26,
+          "jsdoctags": [
+            {
+              "name": "input",
+              "type": "string",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        }
+      ],
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "",
+      "type": "component",
+      "sourceCode": "import {\n  ChangeDetectionStrategy,\n  Component,\n  Input,\n  OnInit,\n} from '@angular/core';\nimport { environment } from '@env/environment';\nimport { IMovie } from '@models/movie';\n\n@Component({\n  selector: 'app-movie-card',\n  templateUrl: './movie-card.component.html',\n  styleUrls: ['./movie-card.component.scss'],\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class MovieCardComponent implements OnInit {\n  @Input() movie: IMovie;\n  constructor() {}\n\n  ngOnInit(): void {}\n\n  buildBackgroundImageURL(image: string) {\n    return `${environment.movieImageResourceURL}${image}`;\n  }\n\n  truncate(input: string) {\n    return input.length > 400 ? `${input.substring(0, 400)}...` : input;\n  }\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "@import \"theme-variables.scss\";\n\n.movie-card {\n  position: relative;\n  display: block;\n  width: 500px;\n  height: 500px;\n  overflow: hidden;\n  border-radius: 10px;\n  transition: all 0.4s;\n  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);\n  &:hover {\n    transform: scale(1.02);\n    box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);\n    transition: all 0.4s;\n  }\n  > .info-section {\n    position: relative;\n    width: 100%;\n    height: 100%;\n    background-blend-mode: multiply;\n    z-index: 2;\n    border-radius: 10px;\n    .movie-header {\n      position: relative;\n      padding: 25px;\n      height: 30%;\n      .title {\n        color: $black;\n        font-weight: 400;\n      }\n      .info {\n        color: $gray-600;\n        font-weight: 400;\n      }\n\n      > .minutes {\n        display: inline-block;\n        margin-top: 15px;\n        color: $gray-600;\n        padding: 5px;\n        border-radius: 5px;\n        border: 1px solid rgba(0, 0, 0, 0.05);\n      }\n\n      > .type {\n        display: inline-block;\n        color: $gray-700;\n        margin-left: 10px;\n      }\n    }\n    > .movie-desc {\n      padding: 25px;\n      height: 25%;\n      > .text {\n        color: $black;\n      }\n    }\n    > .movie-social {\n      height: 10%;\n      padding-left: 15px;\n      padding-bottom: 20px;\n      ul {\n        list-style: none;\n        padding: 0;\n        li {\n          display: inline-block;\n          color: rgba(0, 0, 0, 0.3);\n          transition: color 0.3s;\n          transition-delay: 0.15s;\n          margin: 0 10px;\n          &:hover {\n            transition: color 0.3s;\n            color: rgba(0, 0, 0, 0.7);\n          }\n          i {\n            font-size: 19px;\n            cursor: pointer;\n          }\n        }\n      }\n    }\n  }\n  > .blur-back {\n    position: absolute;\n    top: 0;\n    z-index: 1;\n    height: 100%;\n    right: 0;\n    background-size: contain;\n    border-radius: 11px;\n    background-repeat: repeat;\n  }\n}\n\n@media screen and (min-width: 768px) {\n  .movie-header {\n    width: 65%;\n  }\n\n  .movie-desc {\n    width: 50%;\n  }\n\n  .info-section {\n    background: linear-gradient(to right, $gray-200 35%, transparent 100%);\n  }\n\n  .blur-back {\n    width: 80%;\n    background-position: 100% 10% !important;\n  }\n}\n\n@media screen and (max-width: 768px) {\n  .movie-card {\n    width: 95%;\n    margin: 70px auto;\n    min-height: 350px;\n    height: auto;\n  }\n\n  .blur-back {\n    width: 100%;\n    background-position: 50% 50% !important;\n  }\n\n  .movie-header {\n    width: 100%;\n    margin-top: 85px;\n  }\n\n  .movie-desc {\n    width: 100%;\n  }\n\n  .info-section {\n    background: linear-gradient(to top, $gray-200 50%, transparent 100%);\n    display: inline-grid;\n  }\n}\n",
+          "styleUrl": "./movie-card.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "args": [],
+        "line": 17
+      },
+      "implements": ["OnInit"],
+      "templateData": "<div class=\"movie-card\" id=\"bright\">\n  <div class=\"info-section\">\n    <div class=\"movie-header\">\n      <h1 class=\"title\">{{ movie.title }}</h1>\n      <h4 class=\"info\">\n        {{ movie.release_date | date: 'longDate' }}\n      </h4>\n    </div>\n    <div class=\"movie-desc\">\n      <p class=\"text\">\n        {{ truncate(movie.overview) }}\n      </p>\n    </div>\n  </div>\n  <div\n    class=\"blur-back\"\n    [style.background-image]=\"\n      'url(' + buildBackgroundImageURL(movie.backdrop_path) + ')'\n    \"\n  ></div>\n</div>\n"
+    },
+    {
+      "name": "ShellComponent",
+      "id": "component-ShellComponent-8eee6cb2c60ed4962b974d853017639d",
+      "file": "src/app/shell/shell.component.ts",
+      "encapsulation": [],
+      "entryComponents": [],
+      "inputs": [],
+      "outputs": [],
+      "providers": [],
+      "selector": "app-shell",
+      "styleUrls": ["./shell.component.scss"],
+      "styles": [],
+      "templateUrl": ["./shell.component.html"],
+      "viewProviders": [],
+      "inputsClass": [],
+      "outputsClass": [],
+      "propertiesClass": [],
+      "methodsClass": [
+        {
+          "name": "ngOnInit",
+          "args": [],
+          "optional": false,
+          "returnType": "void",
+          "typeParameters": [],
+          "line": 11
+        }
+      ],
+      "hostBindings": [],
+      "hostListeners": [],
+      "description": "",
+      "rawdescription": "",
+      "type": "component",
+      "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-shell',\n  templateUrl: './shell.component.html',\n  styleUrls: ['./shell.component.scss'],\n})\nexport class ShellComponent implements OnInit {\n  constructor() {}\n\n  ngOnInit() {}\n}\n",
+      "assetsDirs": [],
+      "styleUrlsData": [
+        {
+          "data": "",
+          "styleUrl": "./shell.component.scss"
+        }
+      ],
+      "stylesData": "",
+      "constructorObj": {
+        "name": "constructor",
+        "description": "",
+        "args": [],
+        "line": 8
+      },
+      "implements": ["OnInit"],
+      "templateData": "<app-header></app-header>\n<router-outlet></router-outlet>\n"
+    }
+  ],
+  "modules": [
+    {
+      "name": "AppModule",
+      "children": [
+        {
+          "type": "providers",
+          "elements": []
+        },
+        {
+          "type": "declarations",
+          "elements": [
+            {
+              "name": "AppComponent"
+            }
+          ]
+        },
+        {
+          "type": "imports",
+          "elements": [
+            {
+              "name": "AppRoutingModule"
+            },
+            {
+              "name": "CoreModule"
+            },
+            {
+              "name": "HomeModule"
+            },
+            {
+              "name": "SharedModule"
+            },
+            {
+              "name": "ShellModule"
+            }
+          ]
+        },
+        {
+          "type": "exports",
+          "elements": []
+        },
+        {
+          "type": "bootstrap",
+          "elements": [
+            {
+              "name": "AppComponent"
+            }
+          ]
+        },
+        {
+          "type": "classes",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "name": "AppRoutingModule",
+      "children": [
+        {
+          "type": "providers",
+          "elements": []
+        },
+        {
+          "type": "declarations",
+          "elements": []
+        },
+        {
+          "type": "imports",
+          "elements": []
+        },
+        {
+          "type": "exports",
+          "elements": []
+        },
+        {
+          "type": "bootstrap",
+          "elements": []
+        },
+        {
+          "type": "classes",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "name": "CoreModule",
+      "children": [
+        {
+          "type": "providers",
+          "elements": [
+            {
+              "name": "ApiKeyInterceptor"
+            },
+            {
+              "name": "ErrorHandlerInterceptor"
+            }
+          ]
+        },
+        {
+          "type": "declarations",
+          "elements": []
+        },
+        {
+          "type": "imports",
+          "elements": []
+        },
+        {
+          "type": "exports",
+          "elements": []
+        },
+        {
+          "type": "bootstrap",
+          "elements": []
+        },
+        {
+          "type": "classes",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "name": "HomeModule",
+      "children": [
+        {
+          "type": "providers",
+          "elements": []
+        },
+        {
+          "type": "declarations",
+          "elements": [
+            {
+              "name": "HomeComponent"
+            }
+          ]
+        },
+        {
+          "type": "imports",
+          "elements": [
+            {
+              "name": "HomeRoutingModule"
+            },
+            {
+              "name": "SharedModule"
+            }
+          ]
+        },
+        {
+          "type": "exports",
+          "elements": []
+        },
+        {
+          "type": "bootstrap",
+          "elements": []
+        },
+        {
+          "type": "classes",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "name": "HomeRoutingModule",
+      "children": [
+        {
+          "type": "providers",
+          "elements": []
+        },
+        {
+          "type": "declarations",
+          "elements": []
+        },
+        {
+          "type": "imports",
+          "elements": []
+        },
+        {
+          "type": "exports",
+          "elements": []
+        },
+        {
+          "type": "bootstrap",
+          "elements": []
+        },
+        {
+          "type": "classes",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "name": "SharedModule",
+      "children": [
+        {
+          "type": "providers",
+          "elements": []
+        },
+        {
+          "type": "declarations",
+          "elements": [
+            {
+              "name": "LoaderComponent"
+            },
+            {
+              "name": "MovieCardComponent"
+            }
+          ]
+        },
+        {
+          "type": "imports",
+          "elements": []
+        },
+        {
+          "type": "exports",
+          "elements": [
+            {
+              "name": "LoaderComponent"
+            },
+            {
+              "name": "MovieCardComponent"
+            }
+          ]
+        },
+        {
+          "type": "bootstrap",
+          "elements": []
+        },
+        {
+          "type": "classes",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "name": "ShellModule",
+      "children": [
+        {
+          "type": "providers",
+          "elements": []
+        },
+        {
+          "type": "declarations",
+          "elements": [
+            {
+              "name": "HeaderComponent"
+            },
+            {
+              "name": "ShellComponent"
+            }
+          ]
+        },
+        {
+          "type": "imports",
+          "elements": []
+        },
+        {
+          "type": "exports",
+          "elements": []
+        },
+        {
+          "type": "bootstrap",
+          "elements": []
+        },
+        {
+          "type": "classes",
+          "elements": []
+        }
+      ]
+    }
+  ],
+  "miscellaneous": {
+    "variables": [
+      {
+        "name": "bootstrap",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/main.ts",
+        "type": "",
+        "defaultValue": "() => platformBrowserDynamic().bootstrapModule(AppModule)"
+      },
+      {
+        "name": "configureTests",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/test-config.helper.ts",
+        "type": "",
+        "defaultValue": "(\n  configure: ConfigureFn,\n  compilerOptions: CompilerOptions = {}\n) => {\n  const compilerConfig: CompilerOptions = {\n    preserveWhitespaces: false,\n    ...compilerOptions,\n  };\n\n  const configuredTestBed = TestBed.configureCompiler(compilerConfig);\n\n  configure(configuredTestBed);\n\n  return configuredTestBed.compileComponents().then(() => configuredTestBed);\n}"
+      },
+      {
+        "name": "Default",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/stories/movie-card.stories.ts",
+        "type": "",
+        "defaultValue": "Template.bind({})"
+      },
+      {
+        "name": "env",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/environments/.env.ts",
+        "type": "literal type",
+        "defaultValue": "{\n  'npm_package_version': '1.0.0'\n}"
+      },
+      {
+        "name": "environment",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/environments/environment.prod.ts",
+        "type": "object",
+        "defaultValue": "{\n  production: true,\n  hmr: false,\n  version: env.npm_package_version,\n  serverUrl: 'https://api.themoviedb.org/3',\n  api_key: 'feb6f0eeaa0a72662967d77079850353',\n  movieImageResourceURL: 'https://www.themoviedb.org/t/p/w600_and_h900_face',\n  defaultLanguage: 'en-US',\n  supportedLanguages: ['en-US'],\n}"
+      },
+      {
+        "name": "environment",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/environments/environment.ts",
+        "type": "object",
+        "defaultValue": "{\n  production: false,\n  hmr: true,\n  version: env.npm_package_version + '-dev',\n  serverUrl: '/api',\n  api_key: 'feb6f0eeaa0a72662967d77079850353',\n  movieImageResourceURL: 'https://www.themoviedb.org/t/p/w600_and_h900_face',\n  defaultLanguage: 'en-US',\n  supportedLanguages: ['en-US'],\n}"
+      },
+      {
+        "name": "languageKey",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/i18n/i18n.service.ts",
+        "type": "string",
+        "defaultValue": "'language'"
+      },
+      {
+        "name": "log",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/app.component.ts",
+        "type": "",
+        "defaultValue": "new Logger('App')"
+      },
+      {
+        "name": "log",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/i18n/i18n.service.ts",
+        "type": "",
+        "defaultValue": "new Logger('I18nService')"
+      },
+      {
+        "name": "log",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/@core/http/error-handler.interceptor.ts",
+        "type": "",
+        "defaultValue": "new Logger('ErrorHandlerInterceptor')"
+      },
+      {
+        "name": "storageMock",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/setup-jest.ts",
+        "type": "",
+        "defaultValue": "() => {\n  let storage: { [key: string]: string } = {};\n  return {\n    getItem: (key: string) => (key in storage ? storage[key] : null),\n    setItem: (key: string, value: string) => (storage[key] = value || ''),\n    removeItem: (key: string) => delete storage[key],\n    clear: () => (storage = {}),\n  };\n}"
+      },
+      {
+        "name": "Template",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/stories/movie-card.stories.ts",
+        "type": "Story<MovieCardComponent>",
+        "defaultValue": "(args: MovieCardComponent) => ({\n  component: MovieCardComponent,\n  props: args,\n})"
+      },
+      {
+        "name": "untilDestroyedSymbol",
+        "ctype": "miscellaneous",
+        "subtype": "variable",
+        "file": "src/app/@core/until-destroyed.ts",
+        "type": "",
+        "defaultValue": "Symbol('untilDestroyed')"
+      }
+    ],
+    "functions": [
+      {
+        "name": "hmrBootstrap",
+        "file": "src/hmr.ts",
+        "ctype": "miscellaneous",
+        "subtype": "function",
+        "description": "",
+        "args": [
+          {
+            "name": "module",
+            "type": "any"
+          },
+          {
+            "name": "bootstrap"
+          }
+        ],
+        "jsdoctags": [
+          {
+            "name": "module",
+            "type": "any",
+            "tagName": {
+              "text": "param"
+            }
+          },
+          {
+            "name": "bootstrap",
+            "tagName": {
+              "text": "param"
+            }
+          }
+        ]
+      },
+      {
+        "name": "untilDestroyed",
+        "file": "src/app/@core/until-destroyed.ts",
+        "ctype": "miscellaneous",
+        "subtype": "function",
+        "description": "<p>RxJS operator that unsubscribe from observables on destory.\nCode forked from <a href=\"https://github.com/NetanelBasal/ngx-take-until-destroy\">https://github.com/NetanelBasal/ngx-take-until-destroy</a></p>\n<p>IMPORTANT: Add the <code>untilDestroyed</code> operator as the last one to prevent leaks with intermediate observables in the\noperator chain.</p>\n",
+        "args": [
+          {
+            "name": "instance"
+          },
+          {
+            "name": "destroyMethodName"
+          }
+        ],
+        "jsdoctags": [
+          {
+            "name": {
+              "pos": 440,
+              "end": 448,
+              "flags": 0,
+              "escapedText": "instance"
+            },
+            "tagName": {
+              "pos": 434,
+              "end": 439,
+              "flags": 0,
+              "escapedText": "param"
+            },
+            "comment": "<p>The parent Angular component or object instance.</p>\n"
+          },
+          {
+            "name": {
+              "pos": 508,
+              "end": 525,
+              "flags": 0,
+              "escapedText": "destroyMethodName"
+            },
+            "tagName": {
+              "pos": 502,
+              "end": 507,
+              "flags": 0,
+              "escapedText": "param"
+            },
+            "comment": "<p>The method to hook on (default: &#39;ngOnDestroy&#39;).</p>\n"
+          },
+          {
+            "tagName": {
+              "pos": 578,
+              "end": 585,
+              "flags": 0,
+              "escapedText": "example"
+            },
+            "comment": "<p>```</p>\n<ul>\n<li>import { untilDestroyed } from &#39;@core&#39;;</li>\n<li></li>\n<li>@Component({</li>\n<li>selector: &#39;app-example&#39;,</li>\n<li>templateUrl: &#39;./example.component.html&#39;</li>\n<li>})</li>\n<li>export class ExampleComponent implements OnInit, OnDestroy {</li>\n<li>ngOnInit() {</li>\n<li>interval(1000)</li>\n<li>.pipe(untilDestroyed(this))</li>\n<li>.subscribe(val =&gt; console.log(val));</li>\n<li>}</li>\n<li></li>\n<li>// This method must be present, even if empty.</li>\n<li>ngOnDestroy() {</li>\n<li>// To protect you, an error will be thrown if it doesn&#39;t exist.</li>\n<li>}</li>\n<li>}</li>\n<li>```</li>\n</ul>\n"
+          }
+        ]
+      }
+    ],
+    "typealiases": [
+      {
+        "name": "CompilerOptions",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "Partial<literal type>",
+        "file": "src/test-config.helper.ts",
+        "description": "",
+        "kind": 161
+      },
+      {
+        "name": "ConfigureFn",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "function",
+        "file": "src/test-config.helper.ts",
+        "description": "",
+        "kind": 162
+      },
+      {
+        "name": "LogOutput",
+        "ctype": "miscellaneous",
+        "subtype": "typealias",
+        "rawtype": "function",
+        "file": "src/app/@core/logger.service.ts",
+        "description": "<p>Log output handler function.</p>\n",
+        "kind": 162
+      }
+    ],
+    "enumerations": [
+      {
+        "name": "IOriginalLanguage",
+        "childs": [
+          {
+            "name": "En",
+            "value": "en"
+          },
+          {
+            "name": "Es",
+            "value": "es"
+          }
+        ],
+        "ctype": "miscellaneous",
+        "subtype": "enum",
+        "description": "",
+        "file": "src/app/@shared/models/movie.ts"
+      },
+      {
+        "name": "LogLevel",
+        "childs": [
+          {
+            "name": "Off",
+            "value": "0"
+          },
+          {
+            "name": "Error"
+          },
+          {
+            "name": "Warning"
+          },
+          {
+            "name": "Info"
+          },
+          {
+            "name": "Debug"
+          }
+        ],
+        "ctype": "miscellaneous",
+        "subtype": "enum",
+        "description": "<p>Simple logger system with the possibility of registering custom outputs.</p>\n<p>4 different log levels are provided, with corresponding methods:</p>\n<ul>\n<li>debug   : for debug information</li>\n<li>info    : for informative status of the application (success, ...)</li>\n<li>warning : for non-critical errors that do not prevent normal application behavior</li>\n<li>error   : for critical errors that prevent normal application behavior</li>\n</ul>\n<p>Example usage:</p>\n<div><pre class=\"line-numbers\"><code class=\"language-none\"> * import { Logger } from &#39;app/core/logger.service&#39;;\n *\n * const log = new Logger(&#39;myFile&#39;);\n * ...\n * log.debug(&#39;something happened&#39;);\n * ```\n\nTo disable debug and info logs in production, add this snippet to your root component:</code></pre></div><ul>\n<li>export class AppComponent implements OnInit {</li>\n<li>ngOnInit() {</li>\n<li>if (environment.production) {</li>\n<li>Logger.enableProductionMode();</li>\n<li>}</li>\n<li>...</li>\n<li>}</li>\n<li>}</li>\n<li></li>\n<li>If you want to process logs through other outputs than console, you can add LogOutput functions to Logger.outputs.</li>\n<li></li>\n</ul>\n",
+        "file": "src/app/@core/logger.service.ts"
+      }
+    ],
+    "groupedVariables": {
+      "src/main.ts": [
+        {
+          "name": "bootstrap",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/main.ts",
+          "type": "",
+          "defaultValue": "() => platformBrowserDynamic().bootstrapModule(AppModule)"
+        }
+      ],
+      "src/test-config.helper.ts": [
+        {
+          "name": "configureTests",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/test-config.helper.ts",
+          "type": "",
+          "defaultValue": "(\n  configure: ConfigureFn,\n  compilerOptions: CompilerOptions = {}\n) => {\n  const compilerConfig: CompilerOptions = {\n    preserveWhitespaces: false,\n    ...compilerOptions,\n  };\n\n  const configuredTestBed = TestBed.configureCompiler(compilerConfig);\n\n  configure(configuredTestBed);\n\n  return configuredTestBed.compileComponents().then(() => configuredTestBed);\n}"
+        }
+      ],
+      "src/stories/movie-card.stories.ts": [
+        {
+          "name": "Default",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/stories/movie-card.stories.ts",
+          "type": "",
+          "defaultValue": "Template.bind({})"
+        },
+        {
+          "name": "Template",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/stories/movie-card.stories.ts",
+          "type": "Story<MovieCardComponent>",
+          "defaultValue": "(args: MovieCardComponent) => ({\n  component: MovieCardComponent,\n  props: args,\n})"
+        }
+      ],
+      "src/environments/.env.ts": [
+        {
+          "name": "env",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/environments/.env.ts",
+          "type": "literal type",
+          "defaultValue": "{\n  'npm_package_version': '1.0.0'\n}"
+        }
+      ],
+      "src/environments/environment.prod.ts": [
+        {
+          "name": "environment",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/environments/environment.prod.ts",
+          "type": "object",
+          "defaultValue": "{\n  production: true,\n  hmr: false,\n  version: env.npm_package_version,\n  serverUrl: 'https://api.themoviedb.org/3',\n  api_key: 'feb6f0eeaa0a72662967d77079850353',\n  movieImageResourceURL: 'https://www.themoviedb.org/t/p/w600_and_h900_face',\n  defaultLanguage: 'en-US',\n  supportedLanguages: ['en-US'],\n}"
+        }
+      ],
+      "src/environments/environment.ts": [
+        {
+          "name": "environment",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/environments/environment.ts",
+          "type": "object",
+          "defaultValue": "{\n  production: false,\n  hmr: true,\n  version: env.npm_package_version + '-dev',\n  serverUrl: '/api',\n  api_key: 'feb6f0eeaa0a72662967d77079850353',\n  movieImageResourceURL: 'https://www.themoviedb.org/t/p/w600_and_h900_face',\n  defaultLanguage: 'en-US',\n  supportedLanguages: ['en-US'],\n}"
+        }
+      ],
+      "src/app/i18n/i18n.service.ts": [
+        {
+          "name": "languageKey",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/app/i18n/i18n.service.ts",
+          "type": "string",
+          "defaultValue": "'language'"
+        },
+        {
+          "name": "log",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/app/i18n/i18n.service.ts",
+          "type": "",
+          "defaultValue": "new Logger('I18nService')"
+        }
+      ],
+      "src/app/app.component.ts": [
+        {
+          "name": "log",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/app/app.component.ts",
+          "type": "",
+          "defaultValue": "new Logger('App')"
+        }
+      ],
+      "src/app/@core/http/error-handler.interceptor.ts": [
+        {
+          "name": "log",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/app/@core/http/error-handler.interceptor.ts",
+          "type": "",
+          "defaultValue": "new Logger('ErrorHandlerInterceptor')"
+        }
+      ],
+      "src/setup-jest.ts": [
+        {
+          "name": "storageMock",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/setup-jest.ts",
+          "type": "",
+          "defaultValue": "() => {\n  let storage: { [key: string]: string } = {};\n  return {\n    getItem: (key: string) => (key in storage ? storage[key] : null),\n    setItem: (key: string, value: string) => (storage[key] = value || ''),\n    removeItem: (key: string) => delete storage[key],\n    clear: () => (storage = {}),\n  };\n}"
+        }
+      ],
+      "src/app/@core/until-destroyed.ts": [
+        {
+          "name": "untilDestroyedSymbol",
+          "ctype": "miscellaneous",
+          "subtype": "variable",
+          "file": "src/app/@core/until-destroyed.ts",
+          "type": "",
+          "defaultValue": "Symbol('untilDestroyed')"
+        }
+      ]
+    },
+    "groupedFunctions": {
+      "src/hmr.ts": [
+        {
+          "name": "hmrBootstrap",
+          "file": "src/hmr.ts",
+          "ctype": "miscellaneous",
+          "subtype": "function",
+          "description": "",
+          "args": [
+            {
+              "name": "module",
+              "type": "any"
+            },
+            {
+              "name": "bootstrap"
+            }
+          ],
+          "jsdoctags": [
+            {
+              "name": "module",
+              "type": "any",
+              "tagName": {
+                "text": "param"
+              }
+            },
+            {
+              "name": "bootstrap",
+              "tagName": {
+                "text": "param"
+              }
+            }
+          ]
+        }
+      ],
+      "src/app/@core/until-destroyed.ts": [
+        {
+          "name": "untilDestroyed",
+          "file": "src/app/@core/until-destroyed.ts",
+          "ctype": "miscellaneous",
+          "subtype": "function",
+          "description": "<p>RxJS operator that unsubscribe from observables on destory.\nCode forked from <a href=\"https://github.com/NetanelBasal/ngx-take-until-destroy\">https://github.com/NetanelBasal/ngx-take-until-destroy</a></p>\n<p>IMPORTANT: Add the <code>untilDestroyed</code> operator as the last one to prevent leaks with intermediate observables in the\noperator chain.</p>\n",
+          "args": [
+            {
+              "name": "instance"
+            },
+            {
+              "name": "destroyMethodName"
+            }
+          ],
+          "jsdoctags": [
+            {
+              "name": {
+                "pos": 440,
+                "end": 448,
+                "flags": 0,
+                "escapedText": "instance"
+              },
+              "tagName": {
+                "pos": 434,
+                "end": 439,
+                "flags": 0,
+                "escapedText": "param"
+              },
+              "comment": "<p>The parent Angular component or object instance.</p>\n"
+            },
+            {
+              "name": {
+                "pos": 508,
+                "end": 525,
+                "flags": 0,
+                "escapedText": "destroyMethodName"
+              },
+              "tagName": {
+                "pos": 502,
+                "end": 507,
+                "flags": 0,
+                "escapedText": "param"
+              },
+              "comment": "<p>The method to hook on (default: &#39;ngOnDestroy&#39;).</p>\n"
+            },
+            {
+              "tagName": {
+                "pos": 578,
+                "end": 585,
+                "flags": 0,
+                "escapedText": "example"
+              },
+              "comment": "<p>```</p>\n<ul>\n<li>import { untilDestroyed } from &#39;@core&#39;;</li>\n<li></li>\n<li>@Component({</li>\n<li>selector: &#39;app-example&#39;,</li>\n<li>templateUrl: &#39;./example.component.html&#39;</li>\n<li>})</li>\n<li>export class ExampleComponent implements OnInit, OnDestroy {</li>\n<li>ngOnInit() {</li>\n<li>interval(1000)</li>\n<li>.pipe(untilDestroyed(this))</li>\n<li>.subscribe(val =&gt; console.log(val));</li>\n<li>}</li>\n<li></li>\n<li>// This method must be present, even if empty.</li>\n<li>ngOnDestroy() {</li>\n<li>// To protect you, an error will be thrown if it doesn&#39;t exist.</li>\n<li>}</li>\n<li>}</li>\n<li>```</li>\n</ul>\n"
+            }
+          ]
+        }
+      ]
+    },
+    "groupedEnumerations": {
+      "src/app/@shared/models/movie.ts": [
+        {
+          "name": "IOriginalLanguage",
+          "childs": [
+            {
+              "name": "En",
+              "value": "en"
+            },
+            {
+              "name": "Es",
+              "value": "es"
+            }
+          ],
+          "ctype": "miscellaneous",
+          "subtype": "enum",
+          "description": "",
+          "file": "src/app/@shared/models/movie.ts"
+        }
+      ],
+      "src/app/@core/logger.service.ts": [
+        {
+          "name": "LogLevel",
+          "childs": [
+            {
+              "name": "Off",
+              "value": "0"
+            },
+            {
+              "name": "Error"
+            },
+            {
+              "name": "Warning"
+            },
+            {
+              "name": "Info"
+            },
+            {
+              "name": "Debug"
+            }
+          ],
+          "ctype": "miscellaneous",
+          "subtype": "enum",
+          "description": "<p>Simple logger system with the possibility of registering custom outputs.</p>\n<p>4 different log levels are provided, with corresponding methods:</p>\n<ul>\n<li>debug   : for debug information</li>\n<li>info    : for informative status of the application (success, ...)</li>\n<li>warning : for non-critical errors that do not prevent normal application behavior</li>\n<li>error   : for critical errors that prevent normal application behavior</li>\n</ul>\n<p>Example usage:</p>\n<div><pre class=\"line-numbers\"><code class=\"language-none\"> * import { Logger } from &#39;app/core/logger.service&#39;;\n *\n * const log = new Logger(&#39;myFile&#39;);\n * ...\n * log.debug(&#39;something happened&#39;);\n * ```\n\nTo disable debug and info logs in production, add this snippet to your root component:</code></pre></div><ul>\n<li>export class AppComponent implements OnInit {</li>\n<li>ngOnInit() {</li>\n<li>if (environment.production) {</li>\n<li>Logger.enableProductionMode();</li>\n<li>}</li>\n<li>...</li>\n<li>}</li>\n<li>}</li>\n<li></li>\n<li>If you want to process logs through other outputs than console, you can add LogOutput functions to Logger.outputs.</li>\n<li></li>\n</ul>\n",
+          "file": "src/app/@core/logger.service.ts"
+        }
+      ]
+    },
+    "groupedTypeAliases": {
+      "src/test-config.helper.ts": [
+        {
+          "name": "CompilerOptions",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "Partial<literal type>",
+          "file": "src/test-config.helper.ts",
+          "description": "",
+          "kind": 161
+        },
+        {
+          "name": "ConfigureFn",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "function",
+          "file": "src/test-config.helper.ts",
+          "description": "",
+          "kind": 162
+        }
+      ],
+      "src/app/@core/logger.service.ts": [
+        {
+          "name": "LogOutput",
+          "ctype": "miscellaneous",
+          "subtype": "typealias",
+          "rawtype": "function",
+          "file": "src/app/@core/logger.service.ts",
+          "description": "<p>Log output handler function.</p>\n",
+          "kind": 162
+        }
+      ]
+    }
+  },
+  "routes": [],
+  "coverage": {
+    "count": 10,
+    "status": "low",
+    "files": [
+      {
+        "filePath": "e2e/src/page-objects/app-shared.po.ts",
+        "type": "class",
+        "linktype": "classe",
+        "name": "AppSharedPage",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "e2e/src/page-objects/shell.po.ts",
+        "type": "class",
+        "linktype": "classe",
+        "name": "ShellPage",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/@core/http/api-key.interceptor.ts",
+        "type": "interceptor",
+        "linktype": "interceptor",
+        "name": "ApiKeyInterceptor",
+        "coveragePercent": 0,
+        "coverageCount": "0/2",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/@core/http/error-handler.interceptor.ts",
+        "type": "interceptor",
+        "linktype": "interceptor",
+        "name": "ErrorHandlerInterceptor",
+        "coveragePercent": 33,
+        "coverageCount": "1/3",
+        "status": "medium"
+      },
+      {
+        "filePath": "src/app/@core/http/error-handler.interceptor.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "log",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/@core/logger.service.ts",
+        "type": "class",
+        "linktype": "classe",
+        "name": "Logger",
+        "coveragePercent": 70,
+        "coverageCount": "7/10",
+        "status": "good"
+      },
+      {
+        "filePath": "src/app/@core/route-reusable-strategy.ts",
+        "type": "injectable",
+        "linktype": "injectable",
+        "name": "RouteReusableStrategy",
+        "coveragePercent": 16,
+        "coverageCount": "1/6",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/@core/until-destroyed.ts",
+        "type": "function",
+        "linksubtype": "function",
+        "name": "untilDestroyed",
+        "coveragePercent": 100,
+        "coverageCount": "1/1",
+        "status": "very-good"
+      },
+      {
+        "filePath": "src/app/@core/until-destroyed.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "untilDestroyedSymbol",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/@shared/api/movie/movie.service.ts",
+        "type": "injectable",
+        "linktype": "injectable",
+        "name": "MovieService",
+        "coveragePercent": 0,
+        "coverageCount": "0/4",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/@shared/components/loader/loader.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "LoaderComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/4",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/@shared/components/movie-card/movie-card.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "MovieCardComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/6",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/@shared/models/api_response_lazy_loading.ts",
+        "type": "interface",
+        "linktype": "interface",
+        "name": "IAPIResponseLazyLoading",
+        "coveragePercent": 0,
+        "coverageCount": "0/4",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/@shared/models/movie.ts",
+        "type": "interface",
+        "linktype": "interface",
+        "name": "IMovie",
+        "coveragePercent": 0,
+        "coverageCount": "0/15",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/app.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "AppComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/4",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/app.component.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "log",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/i18n/i18n.service.ts",
+        "type": "injectable",
+        "linktype": "injectable",
+        "name": "I18nService",
+        "coveragePercent": 28,
+        "coverageCount": "2/7",
+        "status": "medium"
+      },
+      {
+        "filePath": "src/app/i18n/i18n.service.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "languageKey",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/i18n/i18n.service.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "log",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/pages/home/home.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "HomeComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/10",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/shell/header/header.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "HeaderComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/5",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/shell/shell.component.ts",
+        "type": "component",
+        "linktype": "component",
+        "name": "ShellComponent",
+        "coveragePercent": 0,
+        "coverageCount": "0/3",
+        "status": "low"
+      },
+      {
+        "filePath": "src/app/shell/shell.service.ts",
+        "type": "class",
+        "linktype": "classe",
+        "name": "Shell",
+        "coveragePercent": 100,
+        "coverageCount": "2/2",
+        "status": "very-good"
+      },
+      {
+        "filePath": "src/environments/.env.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "env",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/environments/environment.prod.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "environment",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/environments/environment.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "environment",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/hmr.ts",
+        "type": "function",
+        "linksubtype": "function",
+        "name": "hmrBootstrap",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/main.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "bootstrap",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/setup-jest.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "storageMock",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/stories/movie-card.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Default",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/stories/movie-card.stories.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "Template",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      },
+      {
+        "filePath": "src/test-config.helper.ts",
+        "type": "variable",
+        "linktype": "miscellaneous",
+        "linksubtype": "variable",
+        "name": "configureTests",
+        "coveragePercent": 0,
+        "coverageCount": "0/1",
+        "status": "low"
+      }
+    ]
+  }
+}

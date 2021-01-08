@@ -6,14 +6,16 @@ version 9.1.0
 # Getting started
 
 1. Go to project folder and install dependencies:
- ```sh
- npm install
- ```
+
+```sh
+npm install
+```
 
 2. Launch development server, and open `localhost:4200` in your browser:
- ```sh
- npm start
- ```
+
+```sh
+npm start
+```
 
 # Project structure
 
@@ -46,17 +48,17 @@ proxy.conf.js                backend proxy configuration
 
 Task automation is based on [NPM scripts](https://docs.npmjs.com/misc/scripts).
 
-Task                            | Description
---------------------------------|--------------------------------------------------------------------------------------
-`npm start`                     | Run development server on `http://localhost:4200/`
-`npm run serve:sw`              | Run test server on `http://localhost:4200/` with service worker enabled
-`npm run build [-- --configuration=production]` | Lint code and build web app for production (with [AOT](https://angular.io/guide/aot-compiler)) in `dist/` folder
-`npm test`                      | Run unit tests via [Karma](https://karma-runner.github.io) in watch mode
-`npm run test:ci`               | Lint code and run unit tests once for continuous integration
-`npm run e2e`                   | Run e2e tests using [Protractor](http://www.protractortest.org)
-`npm run lint`                  | Lint code
-`npm run translations:extract`  | Extract strings from code and templates to `src/app/translations/template.json`
-`npm run prettier`              | Automatically format all `.ts`, `.js` & `.scss` files
+| Task                                            | Description                                                                                                      |
+| ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `npm start`                                     | Run development server on `http://localhost:4200/`                                                               |
+| `npm run serve:sw`                              | Run test server on `http://localhost:4200/` with service worker enabled                                          |
+| `npm run build [-- --configuration=production]` | Lint code and build web app for production (with [AOT](https://angular.io/guide/aot-compiler)) in `dist/` folder |
+| `npm test`                                      | Run unit tests via [Karma](https://karma-runner.github.io) in watch mode                                         |
+| `npm run test:ci`                               | Lint code and run unit tests once for continuous integration                                                     |
+| `npm run e2e`                                   | Run e2e tests using [Protractor](http://www.protractortest.org)                                                  |
+| `npm run lint`                                  | Lint code                                                                                                        |
+| `npm run translations:extract`                  | Extract strings from code and templates to `src/app/translations/template.json`                                  |
+| `npm run prettier`                              | Automatically format all `.ts`, `.js` & `.scss` files                                                            |
 
 When building the application, you can specify the target configuration using the additional flag
 `--configuration <name>` (do not forget to prepend `--` to pass arguments to npm scripts).
@@ -107,8 +109,6 @@ Development, build and quality processes are based on [angular-cli](https://gith
 - Cross-browser CSS with [autoprefixer](https://github.com/postcss/autoprefixer) and
   [browserslist](https://github.com/ai/browserslist)
 - Asset revisioning for [better cache management](https://webpack.github.io/docs/long-term-caching.html)
-- Unit tests using [Jasmine](http://jasmine.github.io) and [Karma](https://karma-runner.github.io)
-- End-to-end tests using [Protractor](https://github.com/angular/protractor)
 - Static code analysis: [TSLint](https://github.com/palantir/tslint), [Codelyzer](https://github.com/mgechev/codelyzer),
   [Stylelint](http://stylelint.io) and [HTMLHint](http://htmlhint.com/)
 - Automatic code formatting with [Prettier](https://prettier.io)
