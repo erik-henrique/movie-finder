@@ -10,7 +10,6 @@ import { SharedModule } from '@shared';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeModule } from './pages/home/home.module';
-import { ShellModule } from './shell/shell.module';
 
 @NgModule({
   imports: [
@@ -23,7 +22,6 @@ import { ShellModule } from './shell/shell.module';
     TranslateModule.forRoot(),
     CoreModule,
     SharedModule,
-    ShellModule,
     HomeModule,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],

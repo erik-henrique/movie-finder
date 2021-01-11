@@ -1,5 +1,4 @@
-import { waitForAsync, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { LoaderComponent } from './loader.component';
 
 describe('LoaderComponent', () => {
@@ -40,27 +39,5 @@ describe('LoaderComponent', () => {
 
     // Assert
     expect(div.getAttribute('hidden')).toBeNull();
-  });
-
-  it('should not display a message by default', () => {
-    // Arrange
-    const element = fixture.nativeElement;
-    const span = element.querySelectorAll('span')[0];
-
-    // Assert
-    expect(span.textContent).toBe('');
-  });
-
-  it('should display specified message', () => {
-    // Arrange
-    const element = fixture.nativeElement;
-    const span = element.querySelectorAll('span')[0];
-
-    // Act
-    fixture.componentInstance.message = 'testing';
-    fixture.detectChanges();
-
-    // Assert
-    expect(span.textContent).toBe('testing');
   });
 });

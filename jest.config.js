@@ -10,14 +10,17 @@ module.exports = {
     '@core/(.*)': ['<rootDir>/src/app/@core/$1'],
     '@shared': ['<rootDir>/src/app/@shared'],
     '@shared/(.*)': ['<rootDir>/src/app/@shared/$1'],
-    '@env': '<rootDir>/src/environments/environment'
+    '@env': '<rootDir>/src/environments/environment',
+    '@models/(.*)': ['<rootDir>/src/app/@shared/models/$1'],
+    '@api/(.*)': ['<rootDir>/src/app/@shared/api/$1'],
+    '@components/(.*)': ['<rootDir>/src/app/@shared/components/$1'],
   },
   globals: {
     'ts-jest': {
       allowSyntheticDefaultImports: true,
-      tsConfig: '<rootDir>/tsconfig.spec.json'
+      tsConfig: '<rootDir>/tsconfig.spec.json',
     },
   },
   // Do not ignore librairies such as ionic, ionic-native or bootstrap to transform them during unit testing.
-  transformIgnorePatterns: ['node_modules/(?!(jest-test|@ng-bootstrap))']
+  transformIgnorePatterns: ['node_modules/(?!(jest-test|@ng-bootstrap))'],
 };
