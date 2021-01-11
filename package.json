@@ -9,7 +9,7 @@
     "serve:sw": "npm run build -s && npx http-server ./dist -p 4200",
     "lint": "ng lint && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
     "test": "npm run env -s && ng test",
-    "test:ci": "npm run env -s && npm run lint -s && ng test --configuration=ci",
+    "test:ci": "npm run env -s && npm run lint -s && ng test --configuration=ci --detectOpenHandles --forceExit ",
     "e2e": "npm run env -s && ng e2e",
     "translations:extract": "ngx-translate-extract --input ./src --output ./src/translations/template.json --format=json --clean --sort",
     "env": "ngx-scripts env npm_package_version",
@@ -90,9 +90,12 @@
       }
     ]
   },
+  "stylelint": {
+    "extends": "stylelint-config-recommended-scss"
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged && npm run test:ci"
     }
   }
 }
