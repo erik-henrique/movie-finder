@@ -26,6 +26,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  removeLastMovie() {
+    if (!this.movieTerm && this.movieTerms.size >= 1) {
+      const lastMovieTerm = Array.from(this.movieTerms).pop();
+      this.movieTerms.delete(lastMovieTerm);
+    }
+  }
+
   addMovieToFind(): void {
     if (this.form.invalid) {
       return;
