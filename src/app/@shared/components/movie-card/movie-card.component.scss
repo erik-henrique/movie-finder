@@ -21,7 +21,7 @@
     background-blend-mode: multiply;
     z-index: 2;
     border-radius: 10px;
-    .movie-header {
+    > .movie-header {
       position: relative;
       padding: 25px;
       height: 30%;
@@ -56,30 +56,6 @@
         color: $black;
       }
     }
-    > .movie-social {
-      height: 10%;
-      padding-left: 15px;
-      padding-bottom: 20px;
-      ul {
-        list-style: none;
-        padding: 0;
-        li {
-          display: inline-block;
-          color: rgba(0, 0, 0, 0.3);
-          transition: color 0.3s;
-          transition-delay: 0.15s;
-          margin: 0 10px;
-          &:hover {
-            transition: color 0.3s;
-            color: rgba(0, 0, 0, 0.7);
-          }
-          i {
-            font-size: 19px;
-            cursor: pointer;
-          }
-        }
-      }
-    }
   }
   > .blur-back {
     position: absolute;
@@ -87,55 +63,49 @@
     z-index: 1;
     height: 100%;
     right: 0;
-    background-size: contain;
+    background-size: cover;
     border-radius: 11px;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .movie-header {
-    width: 65%;
-  }
+  .movie-card {
+    > .info-section {
+      background: linear-gradient(to right, $gray-200 35%, transparent 100%);
+      > .movie-header {
+        width: 65%;
+      }
+      > .movie-desc {
+        width: 50%;
+      }
+    }
 
-  .movie-desc {
-    width: 50%;
-  }
-
-  .info-section {
-    background: linear-gradient(to right, $gray-200 35%, transparent 100%);
-  }
-
-  .blur-back {
-    width: 80%;
-    background-position: 100% 10% !important;
+    > .blur-back {
+      width: 80%;
+      background-position: 100% 10% !important;
+    }
   }
 }
 
 @media screen and (max-width: 768px) {
   .movie-card {
     width: 95%;
-    margin: 70px auto;
     min-height: 350px;
     height: auto;
-  }
 
-  .blur-back {
-    width: 100%;
-    background-position: 50% 50% !important;
-  }
+    > .info-section {
+      background: linear-gradient(to top, $gray-200 50%, transparent 100%);
+      display: inline-grid;
+      > .movie-header {
+        width: 100%;
+        margin-top: 85px;
+      }
+    }
 
-  .movie-header {
-    width: 100%;
-    margin-top: 85px;
-  }
-
-  .movie-desc {
-    width: 100%;
-  }
-
-  .info-section {
-    background: linear-gradient(to top, $gray-200 50%, transparent 100%);
-    display: inline-grid;
+    > .blur-back {
+      width: 100%;
+      background-position: 50% 50% !important;
+    }
   }
 }
