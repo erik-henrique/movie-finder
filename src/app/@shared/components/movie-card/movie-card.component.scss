@@ -8,10 +8,10 @@
   overflow: hidden;
   border-radius: 10px;
   transition: all 0.4s;
-  box-shadow: 0px 0px 120px -25px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 120px -25px rgba(0, 0, 0, 0.5);
   &:hover {
     transform: scale(1.02);
-    box-shadow: 0px 0px 80px -25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 80px -25px rgba(0, 0, 0, 0.5);
     transition: all 0.4s;
   }
   > .info-section {

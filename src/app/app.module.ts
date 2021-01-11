@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { CoreModule } from '@core';
 import { environment } from '@env/environment';
-import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '@shared';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,7 +18,7 @@ import { HomeModule } from './pages/home/home.module';
     }),
     FormsModule,
     HttpClientModule,
-    TranslateModule.forRoot(),
+
     CoreModule,
     SharedModule,
     HomeModule,
