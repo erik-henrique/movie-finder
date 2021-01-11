@@ -22,6 +22,7 @@
         id="search-input"
         placeholder="{{ 'TypesomethingAndPressEnter' | translate }}"
         (keyup.enter)="addMovieToFind()"
+        (keydown.backspace)="removeLastMovie()"
       />
       <i (click)="findMovies()" class="fas fa-search"></i>
     </div>
