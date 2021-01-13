@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { Subscription } from 'rxjs';
-
 import { Logger } from '@core/logger.service';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 import enUS from '../../translations/en-US.json';
+
 
 const log = new Logger('I18nService');
 const languageKey = 'language';
@@ -17,7 +17,7 @@ export class I18nService {
 
   private langChangeSubscription!: Subscription;
 
-  constructor(private translateService: TranslateService) {
+  constructor(private readonly translateService: TranslateService) {
     // Embed languages to avoid extra HTTP requests
     translateService.setTranslation('en-US', enUS);
   }

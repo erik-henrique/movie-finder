@@ -17,12 +17,12 @@ const log = new Logger('App');
 })
 export class AppComponent implements OnInit, OnDestroy {
   constructor(
-    private router: Router,
-    private activatedRoute: ActivatedRoute,
-    private titleService: Title,
-    private translateService: TranslateService,
-    private i18nService: I18nService
-  ) {}
+    private readonly router: Router,
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly titleService: Title,
+    private readonly translateService: TranslateService,
+    private readonly i18nService: I18nService
+  ) { }
 
   ngOnInit() {
     // Setup logger
