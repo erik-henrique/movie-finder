@@ -18,7 +18,6 @@ import { HomeModule } from './pages/home/home.module';
     }),
     FormsModule,
     HttpClientModule,
-
     CoreModule,
     SharedModule,
     HomeModule,
@@ -28,4 +27,4 @@ import { HomeModule } from './pages/home/home.module';
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
