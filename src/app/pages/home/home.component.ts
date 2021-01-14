@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   movieTerms = new Set<string>();
   form: FormGroup;
   moviesFound: IAPIResponseLazyLoading<IMovie>[];
-
+  noMoviesFound = false;
   constructor(
     private readonly formBuilder: FormBuilder,
     private readonly movieService: MovieService
@@ -74,5 +74,14 @@ export class HomeComponent implements OnInit {
       .finally(() => {
         this.isLoading = false;
       });
+
+    if (
+      this.movieTermsArray.length &&
+      this.moviesFound.every((movieResponse) => !movieResponse.results.length)
+    ) {
+      this.noMoviesFound = true;
+    } else {
+      this.noMoviesFound = false;
+    }
   }
 }

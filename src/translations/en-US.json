@@ -1,5 +1,6 @@
 {
   "APP_NAME": "movie-finder",
   "Home": "Home",
-  "TypesomethingAndPressEnter": "Type something and press enter.."
+  "TypesomethingAndPressEnter": "Type something and press enter..",
+  "NoMoviesFound": "No movie found.."
 }
