@@ -1,19 +1,16 @@
 <div class="home-container">
-  <form
-    [formGroup]="form"
-    (ngSubmit)="addMovieToFind()"
-    class="search-container"
-  >
-    <div class="chip" *ngFor="let chip of movieTermsArray">
-      <span>{{ chip }}</span>
+  <form [formGroup]="form" (ngSubmit)="addMovieToFind()" class="search-form">
+    <div class="chip" *ngFor="let movieTerm of movieTermsArray">
+      <span>{{ movieTerm }}</span>
       <button
         type="button"
-        (click)="deleteMovieToFind(chip)"
+        (click)="deleteMovieToFind(movieTerm)"
         class="close-button"
       >
         <i class="fas fa-times close-icon"></i>
       </button>
     </div>
+
     <div class="input-wrapper">
       <input
         formControlName="movieTerm"
@@ -36,8 +33,10 @@
       </app-movie-card>
     </ng-container>
   </div>
-
   <div class="loader">
     <app-loader [isLoading]="isLoading"></app-loader>
+  </div>
+  <div class="no-result-message" *ngIf="noMoviesFound">
+    {{ 'NoMoviesFound' | translate }}
   </div>
 </div>
