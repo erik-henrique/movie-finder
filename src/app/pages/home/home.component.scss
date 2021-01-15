@@ -110,6 +110,10 @@
     margin-top: 2rem;
     display: inline-flex;
     flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
 
   > .loader {
