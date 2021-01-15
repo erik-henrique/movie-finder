@@ -15,6 +15,8 @@ import { IMovie } from '@models/movie';
 })
 export class MovieCardComponent implements OnInit {
   @Input() movie: IMovie;
+  isLoadingImage = true;
+  hasErrorOnImage = false;
   constructor() {}
 
   ngOnInit(): void {}
@@ -23,7 +25,16 @@ export class MovieCardComponent implements OnInit {
     return `${environment.movieImageResourceURL}${image}`;
   }
 
-  truncate(input: string) {
-    return input.length > 400 ? `${input.substring(0, 400)}...` : input;
+  truncateOverlay(overlay: string) {
+    return overlay.length > 400 ? `${overlay.substring(0, 400)}...` : overlay;
+  }
+
+  removeLoading() {
+    this.isLoadingImage = false;
+  }
+
+  handleImageLoadingError() {
+    this.removeLoading();
+    this.hasErrorOnImage = true;
   }
 }

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SharedModule } from '@app/@shared';
 import { IOriginalLanguage } from '@app/@shared/models/movie';
 import { MovieCardComponent } from './movie-card.component';
 
@@ -8,7 +9,7 @@ describe('MovieCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [MovieCardComponent],
+      imports: [SharedModule],
     }).compileComponents();
   });
 

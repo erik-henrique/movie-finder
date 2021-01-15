@@ -7,7 +7,6 @@ import { MovieCardComponent } from './components/movie-card/movie-card.component
 
 @NgModule({
   imports: [CommonModule, TranslateModule.forRoot(), ShellModule],
-
   declarations: [LoaderComponent, MovieCardComponent],
   exports: [ShellModule, LoaderComponent, MovieCardComponent, TranslateModule],
 })
