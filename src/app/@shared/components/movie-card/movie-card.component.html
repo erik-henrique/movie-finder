@@ -1,5 +1,5 @@
 <div class="movie-card">
-  <div class="info-section">
+  <div class="info-section" *ngIf="!isLoadingImage">
     <div class="movie-header">
       <h1 class="title">{{ movie.title }}</h1>
       <h4 class="info">
@@ -8,14 +8,19 @@
     </div>
     <div class="movie-desc">
       <p class="text">
-        {{ truncate(movie.overview) }}
+        {{ truncateOverlay(movie.overview) }}
       </p>
     </div>
   </div>
-  <div
+  <div class="loader">
+    <app-loader [isLoading]="isLoadingImage"></app-loader>
+  </div>
+  <img
+    alt=""
     class="blur-back"
-    [style.background-image]="
-      'url(' + buildBackgroundImageURL(movie.backdrop_path) + ')'
-    "
-  ></div>
+    (error)="handleImageLoadingError()"
+    (load)="removeLoading()"
+    [hidden]="isLoadingImage || hasErrorOnImage"
+    [src]="buildBackgroundImageURL(movie.backdrop_path)"
+  />
 </div>
